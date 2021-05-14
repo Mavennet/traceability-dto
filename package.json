@@ -1,5 +1,5 @@
 {
-  "name": "general-dto",
+  "name": "mavennet-dto",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.cjs.js",
@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mavennet/general-dto/issues"
+    "url": "https://github.com/Mavennet/mavennet-dto/issues"
   },
-  "homepage": "https://github.com/Mavennet/general-dto#readme",
+  "homepage": "https://github.com/Mavennet/mavennet-dto#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.1",
     "class-transformer": ">=0.3.1",
