@@ -1,0 +1,43 @@
+import {
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsOptional,
+  IsEnum,
+  IsString,
+  ValidateNested,
+  IsArray,
+  ArrayNotEmpty,
+  Validate
+} from 'class-validator'
+import { Type } from 'class-transformer'
+import {
+  OrganizationDTO,
+  MeasurementDTO,
+  JSON_TYPE
+} from '../../general'
+
+export class ProductDTO {
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE, { each: true })
+  @Validate(o => o.type === [JSON_TYPE.PRODUCT])
+  type: JSON_TYPE[]
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => OrganizationDTO)
+  manufacturer: OrganizationDTO
+
+  @IsNotEmpty()
+  @IsString()
+  name: string
+
+  @IsOptional()
+  @IsString()
+  description: string
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  sizeOrAmount: MeasurementDTO
+}
