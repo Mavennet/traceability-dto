@@ -709,6 +709,76 @@ __decorate([
     __metadata("design:type", Map)
 ], CreateOrganizationDto.prototype, "uwi", void 0);
 
+class ProductDTO {
+}
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.PRODUCT]),
+    __metadata("design:type", Array)
+], ProductDTO.prototype, "type", void 0);
+__decorate([
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => OrganizationDTO),
+    __metadata("design:type", OrganizationDTO)
+], ProductDTO.prototype, "manufacturer", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    __metadata("design:type", String)
+], ProductDTO.prototype, "name", void 0);
+__decorate([
+    classValidator.IsOptional(),
+    classValidator.IsString(),
+    __metadata("design:type", String)
+], ProductDTO.prototype, "description", void 0);
+__decorate([
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => MeasurementDTO),
+    __metadata("design:type", MeasurementDTO)
+], ProductDTO.prototype, "sizeOrAmount", void 0);
+
+class ProductCredentialSubjectDTO {
+}
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    __metadata("design:type", Array)
+], ProductCredentialSubjectDTO.prototype, "type", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsNumberString(),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "HSCode", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "productionDate", void 0);
+__decorate([
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => PlaceDTO),
+    __metadata("design:type", PlaceDTO)
+], ProductCredentialSubjectDTO.prototype, "facility", void 0);
+__decorate([
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProductDTO),
+    __metadata("design:type", ProductDTO)
+], ProductCredentialSubjectDTO.prototype, "product", void 0);
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ValidateNested({ each: true }),
+    classTransformer.Type(() => ObservationDTO),
+    __metadata("design:type", Array)
+], ProductCredentialSubjectDTO.prototype, "observation", void 0);
+
 exports.AddressDTO = AddressDTO;
 exports.AnalyticsDTO = AnalyticsDTO;
 exports.CategorizedNotificationsDTO = CategorizedNotificationsDTO;
@@ -725,6 +795,8 @@ exports.OrganizationDTO = OrganizationDTO;
 exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
 exports.PlaceDTO = PlaceDTO;
 exports.PostalAddressDTO = PostalAddressDTO;
+exports.ProductCredentialSubjectDTO = ProductCredentialSubjectDTO;
+exports.ProductDTO = ProductDTO;
 exports.ProofDTO = ProofDTO;
 exports.PropertyDTO = PropertyDTO;
 exports.ReadNotificationDTO = ReadNotificationDTO;

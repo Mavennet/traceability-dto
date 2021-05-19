@@ -19,6 +19,11 @@ import {
 import { ProductDTO } from './product.dto'
 
 export class ProductCredentialSubjectDTO {
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE, { each: true })
+  type: JSON_TYPE[]
+
   @IsNotEmpty()
   @IsNumberString()
   HSCode: string
