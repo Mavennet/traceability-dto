@@ -27,14 +27,6 @@ export class CreateOrganizationDto {
   phone: string
 
   @IsNotEmpty()
-  @IsString()
-  mid: string
-
-  @IsNotEmpty()
-  @IsString()
-  cbpImporterRecord: string
-
-  @IsNotEmpty()
   @IsEnum(ORGANIZATION_ROLE)
   role: ORGANIZATION_ROLE
 

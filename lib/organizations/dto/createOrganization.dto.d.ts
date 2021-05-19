@@ -4,8 +4,6 @@ export declare class CreateOrganizationDto {
     email: string;
     address: string;
     phone: string;
-    mid: string;
-    cbpImporterRecord: string;
     role: ORGANIZATION_ROLE;
     did: string;
     backendLink: string;

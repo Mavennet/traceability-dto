@@ -43,90 +43,6 @@ __decorate([
     classValidator.IsUUID(),
     __metadata("design:type", String)
 ], AnalyticsDTO.prototype, "productId", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsDateString(),
-    __metadata("design:type", Date)
-], AnalyticsDTO.prototype, "eventCreatedAt", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "eventType", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsDateString(),
-    __metadata("design:type", Date)
-], AnalyticsDTO.prototype, "productCreatedAt", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "productionMonth", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "aging", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "buyerName", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "qpInBond", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "entryId", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "ftzNo", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "origin", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "portOfEntry", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "streamType", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "startTransportMonth", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "refineryName", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "sulphur", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "density", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "tan", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "price", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "volume", void 0);
 
 class ValidationDTO {
 }
@@ -605,25 +521,6 @@ exports.NOTIFICATION_TYPE = void 0;
     NOTIFICATION_TYPE["TRANSFER_CUSTODY_UPDATED"] = "TRANSFER_CUSTODY_UPDATED";
 })(exports.NOTIFICATION_TYPE || (exports.NOTIFICATION_TYPE = {}));
 
-const ActionableNotifications = new Map([
-    [exports.NOTIFICATION_TYPE.CONTRACT_CREATED, true],
-    [exports.NOTIFICATION_TYPE.CONTRACT_ACCEPTED, false],
-    [exports.NOTIFICATION_TYPE.TRANSPORT_STARTED, false],
-    [exports.NOTIFICATION_TYPE.TRANSPORT_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.STORAGE_STARTED, false],
-    [exports.NOTIFICATION_TYPE.STORAGE_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_CREATED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_ACCEPTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_CHANGE_REQUESTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_CREATED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_ACCEPTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_CHANGE_REQUESTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_UPDATED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_UPDATED, true]
-]);
-
 exports.SOCKET_EVENT_NAME = void 0;
 (function (SOCKET_EVENT_NAME) {
     SOCKET_EVENT_NAME["CONTRACTS_CHANGED"] = "CONTRACTS_CHANGED";
@@ -753,16 +650,6 @@ __decorate([
 ], CreateOrganizationDto.prototype, "phone", void 0);
 __decorate([
     classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], CreateOrganizationDto.prototype, "mid", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], CreateOrganizationDto.prototype, "cbpImporterRecord", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
     classValidator.IsEnum(exports.ORGANIZATION_ROLE),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "role", void 0);
@@ -782,7 +669,6 @@ __decorate([
     __metadata("design:type", Map)
 ], CreateOrganizationDto.prototype, "uwi", void 0);
 
-exports.ActionableNotifications = ActionableNotifications;
 exports.AddressDTO = AddressDTO;
 exports.AnalyticsDTO = AnalyticsDTO;
 exports.CategorizedNotificationsDTO = CategorizedNotificationsDTO;
