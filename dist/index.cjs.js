@@ -467,35 +467,75 @@ __decorate([
     __metadata("design:type", PostalAddressDTO)
 ], PlaceDTO.prototype, "address", void 0);
 
-class VerifiableCredentialDTO {
+class ProofDTO {
 }
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.IsEnum(exports.JSON_TYPE),
     classValidator.Equals(exports.JSON_TYPE.ED25519_SIGNATURE_2018),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "type", void 0);
+], ProofDTO.prototype, "type", void 0);
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.IsDateString(),
     __metadata("design:type", Date)
-], VerifiableCredentialDTO.prototype, "created", void 0);
+], ProofDTO.prototype, "created", void 0);
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.IsString(),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "jws", void 0);
+], ProofDTO.prototype, "jws", void 0);
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.IsEnum(exports.PROOF_PURPOSE_TYPE),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "proofPurpose", void 0);
+], ProofDTO.prototype, "proofPurpose", void 0);
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.IsString(),
     classValidator.Matches(/^did:/),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "verificationMethod", void 0);
+], ProofDTO.prototype, "verificationMethod", void 0);
+
+class VerifiableCredentialDTO {
+}
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(2),
+    classValidator.ArrayMaxSize(2),
+    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+        o['@context'].includes('https://schema.org/')),
+    __metadata("design:type", Array)
+], VerifiableCredentialDTO.prototype, "@context", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUrl(),
+    __metadata("design:type", String)
+], VerifiableCredentialDTO.prototype, "id", void 0);
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(2),
+    classValidator.ArrayMaxSize(2),
+    classValidator.Validate(o => o.type.includes('VerifiableCredential')),
+    __metadata("design:type", Array)
+], VerifiableCredentialDTO.prototype, "type", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
+    __metadata("design:type", String)
+], VerifiableCredentialDTO.prototype, "issuer", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsDateString(),
+    __metadata("design:type", Date)
+], VerifiableCredentialDTO.prototype, "issuanceDate", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProofDTO),
+    __metadata("design:type", ProofDTO)
+], VerifiableCredentialDTO.prototype, "proof", void 0);
 
 exports.NOTIFICATION_TYPE = void 0;
 (function (NOTIFICATION_TYPE) {
@@ -685,6 +725,7 @@ exports.OrganizationDTO = OrganizationDTO;
 exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
 exports.PlaceDTO = PlaceDTO;
 exports.PostalAddressDTO = PostalAddressDTO;
+exports.ProofDTO = ProofDTO;
 exports.PropertyDTO = PropertyDTO;
 exports.ReadNotificationDTO = ReadNotificationDTO;
 exports.SaveS3DocumentsFolderPathDTO = SaveS3DocumentsFolderPathDTO;

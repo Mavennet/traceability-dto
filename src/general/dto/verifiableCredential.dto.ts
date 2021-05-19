@@ -1,33 +1,49 @@
 import {
   IsNotEmpty,
-  IsEnum,
+  IsUrl,
+  IsArray,
   IsString,
   IsDateString,
-  Matches,
-  Equals
+  ArrayMinSize,
+  ArrayMaxSize,
+  ValidateNested,
+  Validate,
+  Matches
 } from 'class-validator'
-import { JSON_TYPE, PROOF_PURPOSE_TYPE } from '../constants'
+import { Type } from 'class-transformer'
+import { ProofDTO } from './proof.dto'
 
 export class VerifiableCredentialDTO {
-  @IsNotEmpty()
-  @IsEnum(JSON_TYPE)
-  @Equals(JSON_TYPE.ED25519_SIGNATURE_2018)
-  type: JSON_TYPE
+  @IsArray()
+  @ArrayMinSize(2)
+  @ArrayMaxSize(2)
+  @Validate(o =>
+    o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+    o['@context'].includes('https://schema.org/')
+  )
+  '@context': string[]
 
   @IsNotEmpty()
-  @IsDateString()
-  created: Date
+  @IsUrl()
+  id: string
 
-  @IsNotEmpty()
-  @IsString()
-  jws: string
-
-  @IsNotEmpty()
-  @IsEnum(PROOF_PURPOSE_TYPE)
-  proofPurpose: PROOF_PURPOSE_TYPE
+  @IsArray()
+  @ArrayMinSize(2)
+  @ArrayMaxSize(2)
+  @Validate(o => o.type.includes('VerifiableCredential'))
+  type: string[]
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  verificationMethod: string
+  issuer: string
+
+  @IsNotEmpty()
+  @IsDateString()
+  issuanceDate: Date
+
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => ProofDTO)
+  proof: ProofDTO
 }

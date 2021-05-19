@@ -1,8 +1,9 @@
-import { JSON_TYPE, PROOF_PURPOSE_TYPE } from '../constants';
+import { ProofDTO } from './proof.dto';
 export declare class VerifiableCredentialDTO {
-    type: JSON_TYPE;
-    created: Date;
-    jws: string;
-    proofPurpose: PROOF_PURPOSE_TYPE;
-    verificationMethod: string;
+    '@context': string[];
+    id: string;
+    type: string[];
+    issuer: string;
+    issuanceDate: Date;
+    proof: ProofDTO;
 }
