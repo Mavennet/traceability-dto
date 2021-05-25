@@ -5,3 +5,5 @@ To build library
 To install library
 ` npm i git+https://[access_code]:x-oauth-basic@github.com/Mavennet/mavennet-dto.git --save
 `
+
+...
