@@ -3,8 +3,8 @@ import {
 	IsString
 } from 'class-validator'
 
-export class SocketEventDTO {
+export abstract class SocketEventDTO {
   @IsNotEmpty()
   @IsString()
-  eventName: string
+  abstract eventName: string
 }

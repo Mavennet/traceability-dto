@@ -9,34 +9,34 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
-export class PostalAddressDTO {
+export abstract class PostalAddressDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.POSTAL_ADDRESS])
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  organizationName: string
+  abstract organizationName: string
 
   @IsOptional()
   @IsString()
-  streetAddress: string
+  abstract streetAddress: string
 
   @IsNotEmpty()
   @IsString()
-  addressLocality: string
+  abstract addressLocality: string
 
   @IsNotEmpty()
   @IsString()
-  addressRegion: string
+  abstract addressRegion: string
 
   @IsOptional()
   @IsString()
-  postalCode: string
+  abstract postalCode: string
 
   @IsNotEmpty()
   @IsString()
-  addressCountry: string
+  abstract addressCountry: string
 }

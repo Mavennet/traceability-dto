@@ -18,33 +18,33 @@ import {
 } from '../../general'
 import { ProductDTO } from './product.dto'
 
-export class ProductCredentialSubjectDTO {
+export abstract class ProductCredentialSubjectDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsNumberString()
-  HSCode: string
+  abstract HSCode: string
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-  productionDate: string
+  abstract productionDate: string
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  facility: PlaceDTO
+  abstract facility: PlaceDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ProductDTO)
-  product: ProductDTO
+  abstract product: ProductDTO
 
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
-  observation: ObservationDTO[]
+  abstract observation: ObservationDTO[]
 }

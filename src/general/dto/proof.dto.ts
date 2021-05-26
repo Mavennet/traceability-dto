@@ -11,26 +11,26 @@ import {
   PROOF_PURPOSE_TYPE
 } from '../constants'
 
-export class ProofDTO {
+export abstract class ProofDTO {
   @IsNotEmpty()
   @IsEnum(JSON_TYPE)
   @Equals(JSON_TYPE.ED25519_SIGNATURE_2018)
-  type: JSON_TYPE
+  abstract type: JSON_TYPE
 
   @IsNotEmpty()
   @IsDateString()
-  created: Date
+  abstract created: Date
 
   @IsNotEmpty()
   @IsString()
-  jws: string
+  abstract jws: string
 
   @IsNotEmpty()
   @IsEnum(PROOF_PURPOSE_TYPE)
-  proofPurpose: PROOF_PURPOSE_TYPE
+  abstract proofPurpose: PROOF_PURPOSE_TYPE
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  verificationMethod: string
+  abstract verificationMethod: string
 }

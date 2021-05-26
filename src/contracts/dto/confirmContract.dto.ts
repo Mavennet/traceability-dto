@@ -7,25 +7,25 @@ import {
   Matches
 } from 'class-validator'
 
-export class ConfirmContractDTO {
+export abstract class ConfirmContractDTO {
   @IsNotEmpty()
   @IsNumber()
-  contractId: number
+  abstract contractId: number
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  receiver: string
+  abstract receiver: string
 
   @IsNotEmpty()
   @IsBoolean()
-  status: boolean
+  abstract status: boolean
 
   @IsNotEmpty()
   @IsString()
-  destination: string
+  abstract destination: string
 
   @IsOptional()
   @IsString()
-  comment: string
+  abstract comment: string
 }

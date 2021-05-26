@@ -11,41 +11,41 @@ import {
 } from 'class-validator'
 import { NOTIFICATION_TYPE } from '../constants'
 
-export class NotificationDTO {
+export abstract class NotificationDTO {
   @IsNotEmpty()
   @IsNumber()
-  notificationId: number
+  abstract notificationId: number
 
   @IsNotEmpty()
   @IsEnum(NOTIFICATION_TYPE)
-  notificationType: NOTIFICATION_TYPE
+  abstract notificationType: NOTIFICATION_TYPE
 
   @IsOptional()
   @IsUUID()
-  productId: string
+  abstract productId: string
 
   @IsOptional()
   @IsNumber()
-  contractId: number
+  abstract contractId: number
 
   @IsOptional()
   @IsNumber()
-  transferRequestId: number
+  abstract transferRequestId: number
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  sender: string
+  abstract sender: string
 
   @IsNotEmpty()
   @IsString()
-  senderName: string
+  abstract senderName: string
 
   @IsNotEmpty()
   @IsBoolean()
-  read: boolean
+  abstract read: boolean
 
   @IsNotEmpty()
   @IsDateString()
-  createdAt: Date
+  abstract createdAt: Date
 }

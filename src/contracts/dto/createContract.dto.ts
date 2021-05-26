@@ -4,26 +4,26 @@ import {
   Matches
 } from 'class-validator'
 
-export class CreateContractDTO {
+export abstract class CreateContractDTO {
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  sender: string
+  abstract sender: string
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  receiver: string
+  abstract receiver: string
 
   @IsNotEmpty()
   @IsString()
-  destination: string
+  abstract destination: string
 
   @IsNotEmpty()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-  startDate: string
+  abstract startDate: string
 
   @IsNotEmpty()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-  endDate: string
+  abstract endDate: string
 }

@@ -4,12 +4,12 @@ import {
   IsUUID,
 } from 'class-validator'
 
-export class AnalyticsDTO {
+export abstract class AnalyticsDTO {
   @IsNotEmpty()
   @IsNumber()
-  currentMillis: number
+  abstract currentMillis: number
 
   @IsNotEmpty()
   @IsUUID()
-  productId: string
+  abstract productId: string
 }

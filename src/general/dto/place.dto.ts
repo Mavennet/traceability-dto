@@ -13,24 +13,24 @@ import { JSON_TYPE } from '../constants'
 import { GeoCoordinatesDTO } from './geoCoordinates.dto'
 import { PostalAddressDTO } from './postalAddress.dto'
 
-export class PlaceDTO {
+export abstract class PlaceDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.PLACE])
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  globalLocationNumber: string
+  abstract globalLocationNumber: string
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => GeoCoordinatesDTO)
-  geo: GeoCoordinatesDTO
+  abstract geo: GeoCoordinatesDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  address: PostalAddressDTO
+  abstract address: PostalAddressDTO
 }

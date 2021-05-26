@@ -9,18 +9,18 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
-export class MeasurementDTO {
+export abstract class MeasurementDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.MEASURED_VALUE] || o.type === [JSON_TYPE.QUANTITATIVE_VALUE])
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  unitCode: string
+  abstract unitCode: string
 
   @IsNotEmpty()
   @IsString()
-  value: string
+  abstract value: string
 }

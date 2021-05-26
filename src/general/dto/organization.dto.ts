@@ -13,35 +13,35 @@ import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
 import { PostalAddressDTO } from './postalAddress.dto'
 
-export class OrganizationDTO {
+export abstract class OrganizationDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.ORGANIZATION])
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsString()
-  name: string
+  abstract name: string
 
   @IsOptional()
   @IsString()
-  description: string
+  abstract description: string
 
   @IsOptional()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  address: PostalAddressDTO
+  abstract address: PostalAddressDTO
 
   @IsOptional()
   @IsEmail()
-  email: string
+  abstract email: string
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
-  phoneNumber: string
+  abstract phoneNumber: string
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
-  faxNumber: string
+  abstract faxNumber: string
 }

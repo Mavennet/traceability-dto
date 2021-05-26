@@ -9,24 +9,24 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
-export class PropertyDTO {
+export abstract class PropertyDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o =>
     o.type === [JSON_TYPE.MECHANICAL_PROPERTY] ||
     o.type === [JSON_TYPE.CHEMICAL_PROPERTY])
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  identifier: string
+  abstract identifier: string
 
   @IsNotEmpty()
   @IsString()
-  name: string
+  abstract name: string
 
   @IsOptional()
   @IsString()
-  description: string
+  abstract description: string
 }

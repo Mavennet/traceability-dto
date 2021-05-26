@@ -10,26 +10,26 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
-export class IssuerDTO {
+export abstract class IssuerDTO {
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  id: string
+  abstract id: string
 
   @IsNotEmpty()
   @IsUrl()
-  url: string
+  abstract url: string
 
   @IsNotEmpty()
   @IsString()
-  name: string
+  abstract name: string
 
   @IsOptional()
   @IsString()
-  description: string
+  abstract description: string
 }

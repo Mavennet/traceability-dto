@@ -9,36 +9,36 @@ import {
 } from 'class-validator'
 import { ORGANIZATION_ROLE } from '../constants'
 
-export class CreateOrganizationDto {
+export abstract class CreateOrganizationDto {
   @IsNotEmpty()
   @IsString()
-  name: string
+  abstract name: string
 
   @IsNotEmpty()
   @IsEmail()
-  email: string
+  abstract email: string
 
   @IsNotEmpty()
   @IsString()
-  address: string
+  abstract address: string
 
   @IsNotEmpty()
   @IsPhoneNumber('CA')
-  phone: string
+  abstract phone: string
 
   @IsNotEmpty()
   @IsEnum(ORGANIZATION_ROLE)
-  role: ORGANIZATION_ROLE
+  abstract role: ORGANIZATION_ROLE
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  did: string
+  abstract did: string
 
   @IsNotEmpty()
   @IsString()
-  backendLink: string
+  abstract backendLink: string
 
   @IsNotEmptyObject()
-  uwi: Map<string, string>
+  abstract uwi: Map<string, string>
 }

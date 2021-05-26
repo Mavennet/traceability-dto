@@ -1,10 +1,11 @@
-export class ValidationDTO {
-  readonly email?: string
+export abstract class ValidationDTO {
+  abstract readonly email?: string
 
-  readonly password?: string
+  abstract readonly password?: string
 
-  readonly apiKey?: string
+  abstract readonly apiKey?: string
 
-  readonly context: 'https://metaltrail.com/metal-vocab/#'
-  '@type': 'loginValidationAction'
+  abstract readonly context: 'https://metaltrail.com/metal-vocab/#'
+
+  abstract '@type': 'loginValidationAction'
 }

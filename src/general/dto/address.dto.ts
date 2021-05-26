@@ -5,16 +5,16 @@ import {
   IsLongitude
 } from 'class-validator'
 
-export class AddressDTO {
+export abstract class AddressDTO {
   @IsNotEmpty()
   @IsString()
-  address: string
+  abstract address: string
 
   @IsNotEmpty()
   @IsLatitude()
-  latitude: string
+  abstract latitude: string
 
   @IsNotEmpty()
   @IsLongitude()
-  longitude: string
+  abstract longitude: string
 }

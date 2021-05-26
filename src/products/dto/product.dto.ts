@@ -16,28 +16,28 @@ import {
   JSON_TYPE
 } from '../../general'
 
-export class ProductDTO {
+export abstract class ProductDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.PRODUCT])
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
-  manufacturer: OrganizationDTO
+  abstract manufacturer: OrganizationDTO
 
   @IsNotEmpty()
   @IsString()
-  name: string
+  abstract name: string
 
   @IsOptional()
   @IsString()
-  description: string
+  abstract description: string
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  sizeOrAmount: MeasurementDTO
+  abstract sizeOrAmount: MeasurementDTO
 }

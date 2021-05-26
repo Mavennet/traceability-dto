@@ -9,18 +9,18 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
-export class GeoCoordinatesDTO {
+export abstract class GeoCoordinatesDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.GEO_COORDINATES])
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsLatitude()
-  latitude: string
+  abstract latitude: string
 
   @IsNotEmpty()
   @IsLongitude()
-  longitude: string
+  abstract longitude: string
 }
