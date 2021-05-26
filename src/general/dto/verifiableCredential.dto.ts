@@ -41,6 +41,8 @@ export class VerifiableCredentialDTO {
   @IsNotEmpty()
   @IsDateString()
   issuanceDate: Date
+  
+  credentialSubject: Object
 
   @IsNotEmpty()
   @ValidateNested()
