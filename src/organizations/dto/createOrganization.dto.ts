@@ -38,7 +38,4 @@ export class CreateOrganizationDto {
   @IsNotEmpty()
   @IsString()
   backendLink: string
-
-  @IsNotEmptyObject()
-  uwi: Map<string, string>
 }
