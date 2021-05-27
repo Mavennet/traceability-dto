@@ -14,13 +14,13 @@ export abstract class GeoCoordinatesDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.GEO_COORDINATES])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsLatitude()
-  abstract latitude: string
+  latitude: string
 
   @IsNotEmpty()
   @IsLongitude()
-  abstract longitude: string
+  longitude: string
 }

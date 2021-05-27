@@ -18,30 +18,30 @@ export abstract class OrganizationDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.ORGANIZATION])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsString()
-  abstract name: string
+  name: string
 
   @IsOptional()
   @IsString()
-  abstract description: string
+  description: string
 
   @IsOptional()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  abstract address: PostalAddressDTO
+  address: PostalAddressDTO
 
   @IsOptional()
   @IsEmail()
-  abstract email: string
+  email: string
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
-  abstract phoneNumber: string
+  phoneNumber: string
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
-  abstract faxNumber: string
+  faxNumber: string
 }

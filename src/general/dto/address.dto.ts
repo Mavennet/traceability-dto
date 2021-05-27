@@ -8,13 +8,13 @@ import {
 export abstract class AddressDTO {
   @IsNotEmpty()
   @IsString()
-  abstract address: string
+  address: string
 
   @IsNotEmpty()
   @IsLatitude()
-  abstract latitude: string
+  latitude: string
 
   @IsNotEmpty()
   @IsLongitude()
-  abstract longitude: string
+  longitude: string
 }

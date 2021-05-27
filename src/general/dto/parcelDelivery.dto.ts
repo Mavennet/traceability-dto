@@ -17,23 +17,23 @@ export abstract class ParcelDeliveryDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.PARCEL_DELIVERY])
-  abstract type: JSON_TYPE
+  type: JSON_TYPE
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  abstract originAddress: PostalAddressDTO
+  originAddress: PostalAddressDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  abstract deliveryAddress: PostalAddressDTO
+  deliveryAddress: PostalAddressDTO
 
   @IsOptional()
   @IsString()
-  abstract deliveryMethod: string
+  deliveryMethod: string
 
   @IsOptional()
   @IsString()
-  abstract trackingNumber: string
+  trackingNumber: string
 }

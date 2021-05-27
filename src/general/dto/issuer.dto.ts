@@ -14,22 +14,22 @@ export abstract class IssuerDTO {
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  abstract id: string
+  id: string
 
   @IsNotEmpty()
   @IsUrl()
-  abstract url: string
+  url: string
 
   @IsNotEmpty()
   @IsString()
-  abstract name: string
+  name: string
 
   @IsOptional()
   @IsString()
-  abstract description: string
+  description: string
 }

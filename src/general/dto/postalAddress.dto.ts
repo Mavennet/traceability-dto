@@ -14,29 +14,29 @@ export abstract class PostalAddressDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.POSTAL_ADDRESS])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  abstract organizationName: string
+  organizationName: string
 
   @IsOptional()
   @IsString()
-  abstract streetAddress: string
+  streetAddress: string
 
   @IsNotEmpty()
   @IsString()
-  abstract addressLocality: string
+  addressLocality: string
 
   @IsNotEmpty()
   @IsString()
-  abstract addressRegion: string
+  addressRegion: string
 
   @IsOptional()
   @IsString()
-  abstract postalCode: string
+  postalCode: string
 
   @IsNotEmpty()
   @IsString()
-  abstract addressCountry: string
+  addressCountry: string
 }

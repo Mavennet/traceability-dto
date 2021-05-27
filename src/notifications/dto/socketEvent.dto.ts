@@ -6,5 +6,5 @@ import {
 export abstract class SocketEventDTO {
   @IsNotEmpty()
   @IsString()
-  abstract eventName: string
+  eventName: string
 }

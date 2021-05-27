@@ -26,17 +26,17 @@ export abstract class ProductCredentialSubjectDTO {
 
   @IsNotEmpty()
   @IsNumberString()
-  abstract HSCode: string
+  HSCode: string
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-  abstract productionDate: string
+  productionDate: string
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  abstract facility: PlaceDTO
+  facility: PlaceDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -46,5 +46,5 @@ export abstract class ProductCredentialSubjectDTO {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
-  abstract observation: ObservationDTO[]
+  observation: ObservationDTO[]
 }

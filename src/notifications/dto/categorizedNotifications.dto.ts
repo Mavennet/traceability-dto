@@ -9,10 +9,10 @@ export abstract class CategorizedNotificationsDTO {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => NotificationDTO)
-  abstract new: NotificationDTO[]
+  new: NotificationDTO[]
 
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => NotificationDTO)
- abstract previous: NotificationDTO[]
+ previous: NotificationDTO[]
 }

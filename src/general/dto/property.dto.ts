@@ -16,17 +16,17 @@ export abstract class PropertyDTO {
   @Validate(o =>
     o.type === [JSON_TYPE.MECHANICAL_PROPERTY] ||
     o.type === [JSON_TYPE.CHEMICAL_PROPERTY])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  abstract identifier: string
+  identifier: string
 
   @IsNotEmpty()
   @IsString()
-  abstract name: string
+  name: string
 
   @IsOptional()
   @IsString()
-  abstract description: string
+  description: string
 }

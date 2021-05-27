@@ -6,5 +6,5 @@ import {
 export abstract class UpdateNotificationSettingsDTO {
   @IsNotEmpty()
   @IsBoolean()
-  abstract actionableOnly: boolean
+  actionableOnly: boolean
 }

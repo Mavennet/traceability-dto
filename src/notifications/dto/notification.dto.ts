@@ -14,38 +14,38 @@ import { NOTIFICATION_TYPE } from '../constants'
 export abstract class NotificationDTO {
   @IsNotEmpty()
   @IsNumber()
-  abstract notificationId: number
+  notificationId: number
 
   @IsNotEmpty()
   @IsEnum(NOTIFICATION_TYPE)
-  abstract notificationType: NOTIFICATION_TYPE
+  notificationType: NOTIFICATION_TYPE
 
   @IsOptional()
   @IsUUID()
-  abstract productId: string
+  productId: string
 
   @IsOptional()
   @IsNumber()
-  abstract contractId: number
+  contractId: number
 
   @IsOptional()
   @IsNumber()
-  abstract transferRequestId: number
+  transferRequestId: number
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  abstract sender: string
+  sender: string
 
   @IsNotEmpty()
   @IsString()
-  abstract senderName: string
+  senderName: string
 
   @IsNotEmpty()
   @IsBoolean()
-  abstract read: boolean
+  read: boolean
 
   @IsNotEmpty()
   @IsDateString()
-  abstract createdAt: Date
+  createdAt: Date
 }

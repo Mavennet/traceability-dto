@@ -6,5 +6,5 @@ import {
 export abstract class DeleteContractsDTO {
   @IsArray()
   @ArrayMinSize(1)
-  abstract contractIds: number[]
+  contractIds: number[]
 }

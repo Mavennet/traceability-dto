@@ -15,22 +15,22 @@ export abstract class ProofDTO {
   @IsNotEmpty()
   @IsEnum(JSON_TYPE)
   @Equals(JSON_TYPE.ED25519_SIGNATURE_2018)
-  abstract type: JSON_TYPE
+  type: JSON_TYPE
 
   @IsNotEmpty()
   @IsDateString()
-  abstract created: Date
+  created: Date
 
   @IsNotEmpty()
   @IsString()
-  abstract jws: string
+  jws: string
 
   @IsNotEmpty()
   @IsEnum(PROOF_PURPOSE_TYPE)
-  abstract proofPurpose: PROOF_PURPOSE_TYPE
+  proofPurpose: PROOF_PURPOSE_TYPE
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  abstract verificationMethod: string
+  verificationMethod: string
 }

@@ -12,30 +12,30 @@ import { ORGANIZATION_ROLE } from '../constants'
 export abstract class CreateOrganizationDto {
   @IsNotEmpty()
   @IsString()
-  abstract name: string
+  name: string
 
   @IsNotEmpty()
   @IsEmail()
-  abstract email: string
+  email: string
 
   @IsNotEmpty()
   @IsString()
-  abstract address: string
+  address: string
 
   @IsNotEmpty()
   @IsPhoneNumber('CA')
-  abstract phone: string
+  phone: string
 
   @IsNotEmpty()
   @IsEnum(ORGANIZATION_ROLE)
-  abstract role: ORGANIZATION_ROLE
+  role: ORGANIZATION_ROLE
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  abstract did: string
+  did: string
 
   @IsNotEmpty()
   @IsString()
-  abstract backendLink: string
+  backendLink: string
 }

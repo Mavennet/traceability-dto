@@ -25,27 +25,27 @@ export abstract class VerifiableCredentialDTO {
 
   @IsNotEmpty()
   @IsUrl()
-  abstract id: string
+  id: string
 
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
   @Validate(o => o.type.includes('VerifiableCredential'))
-  abstract type: string[]
+  type: string[]
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  abstract issuer: string
+  issuer: string
 
   @IsNotEmpty()
   @IsDateString()
-  abstract issuanceDate: Date
+  issuanceDate: Date
   
-  abstract credentialSubject: Object
+  credentialSubject: Object
 
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProofDTO)
-  abstract proof: ProofDTO
+  proof: ProofDTO
 }

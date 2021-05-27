@@ -21,12 +21,12 @@ export abstract class ProductDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.PRODUCT])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
-  abstract manufacturer: OrganizationDTO
+  manufacturer: OrganizationDTO
 
   @IsNotEmpty()
   @IsString()
@@ -34,10 +34,10 @@ export abstract class ProductDTO {
 
   @IsOptional()
   @IsString()
-  abstract description: string
+  description: string
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  abstract sizeOrAmount: MeasurementDTO
+  sizeOrAmount: MeasurementDTO
 }

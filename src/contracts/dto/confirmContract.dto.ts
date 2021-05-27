@@ -10,22 +10,22 @@ import {
 export abstract class ConfirmContractDTO {
   @IsNotEmpty()
   @IsNumber()
-  abstract contractId: number
+  contractId: number
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
-  abstract receiver: string
+  receiver: string
 
   @IsNotEmpty()
   @IsBoolean()
-  abstract status: boolean
+  status: boolean
 
   @IsNotEmpty()
   @IsString()
-  abstract destination: string
+  destination: string
 
   @IsOptional()
   @IsString()
-  abstract comment: string
+  comment: string
 }

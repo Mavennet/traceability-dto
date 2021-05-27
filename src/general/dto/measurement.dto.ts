@@ -14,13 +14,13 @@ export abstract class MeasurementDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.MEASURED_VALUE] || o.type === [JSON_TYPE.QUANTITATIVE_VALUE])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  abstract unitCode: string
+  unitCode: string
 
   @IsNotEmpty()
   @IsString()
-  abstract value: string
+  value: string
 }

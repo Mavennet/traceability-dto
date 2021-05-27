@@ -7,9 +7,9 @@ import {
 export abstract class AnalyticsDTO {
   @IsNotEmpty()
   @IsNumber()
-  abstract currentMillis: number
+  currentMillis: number
 
   @IsNotEmpty()
   @IsUUID()
-  abstract productId: string
+  productId: string
 }

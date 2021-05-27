@@ -18,19 +18,19 @@ export abstract class PlaceDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.PLACE])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsOptional()
   @IsString()
-  abstract globalLocationNumber: string
+  globalLocationNumber: string
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => GeoCoordinatesDTO)
-  abstract geo: GeoCoordinatesDTO
+  geo: GeoCoordinatesDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  abstract address: PostalAddressDTO
+  address: PostalAddressDTO
 }

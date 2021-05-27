@@ -16,15 +16,15 @@ export abstract class ObservationDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.OBSERVATION])
-  abstract type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PropertyDTO)
-  abstract property: PropertyDTO
+  property: PropertyDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  abstract measurement: MeasurementDTO
+  measurement: MeasurementDTO
 }
