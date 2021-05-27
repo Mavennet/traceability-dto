@@ -5,5 +5,6 @@ export declare class VerifiableCredentialDTO {
     type: string[];
     issuer: string;
     issuanceDate: Date;
+    credentialSubject: Object;
     proof: ProofDTO;
 }

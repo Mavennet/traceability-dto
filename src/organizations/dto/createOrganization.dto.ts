@@ -38,7 +38,4 @@ export abstract class CreateOrganizationDto {
   @IsNotEmpty()
   @IsString()
   abstract backendLink: string
-
-  @IsNotEmptyObject()
-  abstract uwi: Map<string, string>
 }

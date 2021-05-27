@@ -7,5 +7,4 @@ export declare class CreateOrganizationDto {
     role: ORGANIZATION_ROLE;
     did: string;
     backendLink: string;
-    uwi: Map<string, string>;
 }
