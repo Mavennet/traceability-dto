@@ -5,7 +5,7 @@ import {
   IsLongitude
 } from 'class-validator'
 
-export class AddressDTO {
+export abstract class AddressDTO {
   @IsNotEmpty()
   @IsString()
   address: string

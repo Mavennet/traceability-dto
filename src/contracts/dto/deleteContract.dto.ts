@@ -3,7 +3,7 @@ import {
 	ArrayMinSize
 } from 'class-validator'
 
-export class DeleteContractsDTO {
+export abstract class DeleteContractsDTO {
   @IsArray()
   @ArrayMinSize(1)
   contractIds: number[]

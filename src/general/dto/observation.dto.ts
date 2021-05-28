@@ -11,7 +11,7 @@ import { JSON_TYPE } from '../constants'
 import { PropertyDTO } from './property.dto'
 import { MeasurementDTO } from './measurement.dto'
 
-export class ObservationDTO {
+export abstract class ObservationDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })

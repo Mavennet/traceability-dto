@@ -16,7 +16,7 @@ import {
   JSON_TYPE
 } from '../../general'
 
-export class ProductDTO {
+export abstract class ProductDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
@@ -30,7 +30,7 @@ export class ProductDTO {
 
   @IsNotEmpty()
   @IsString()
-  name: string
+  abstract name: string
 
   @IsOptional()
   @IsString()

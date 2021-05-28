@@ -9,7 +9,7 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
-export class MeasurementDTO {
+export abstract class MeasurementDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })

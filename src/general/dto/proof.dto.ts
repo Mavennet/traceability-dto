@@ -11,7 +11,7 @@ import {
   PROOF_PURPOSE_TYPE
 } from '../constants'
 
-export class ProofDTO {
+export abstract class ProofDTO {
   @IsNotEmpty()
   @IsEnum(JSON_TYPE)
   @Equals(JSON_TYPE.ED25519_SIGNATURE_2018)

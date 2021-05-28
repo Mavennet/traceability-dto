@@ -3,7 +3,7 @@ import {
 	IsBoolean
 } from 'class-validator'
 
-export class UpdateNotificationSettingsDTO {
+export abstract class UpdateNotificationSettingsDTO {
   @IsNotEmpty()
   @IsBoolean()
   actionableOnly: boolean

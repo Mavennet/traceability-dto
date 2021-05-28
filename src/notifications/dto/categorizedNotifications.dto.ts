@@ -5,7 +5,7 @@ import {
 import { Type } from 'class-transformer'
 import { NotificationDTO } from './notification.dto'
 
-export class CategorizedNotificationsDTO {
+export abstract class CategorizedNotificationsDTO {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => NotificationDTO)
@@ -14,5 +14,5 @@ export class CategorizedNotificationsDTO {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => NotificationDTO)
-  previous: NotificationDTO[]
+ previous: NotificationDTO[]
 }

@@ -6,7 +6,7 @@ import {
 } from 'class-validator'
 import { UPLOAD_TYPE } from '../constants'
 
-export class SaveS3DocumentsFolderPathDTO {
+export abstract class SaveS3DocumentsFolderPathDTO {
   @IsNotEmpty()
   @IsEnum(UPLOAD_TYPE)
   uploadType: UPLOAD_TYPE

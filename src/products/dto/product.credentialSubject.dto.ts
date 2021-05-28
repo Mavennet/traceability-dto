@@ -18,11 +18,11 @@ import {
 } from '../../general'
 import { ProductDTO } from './product.dto'
 
-export class ProductCredentialSubjectDTO {
+export abstract class ProductCredentialSubjectDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  type: JSON_TYPE[]
+  abstract type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsNumberString()
@@ -41,7 +41,7 @@ export class ProductCredentialSubjectDTO {
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ProductDTO)
-  product: ProductDTO
+  abstract product: ProductDTO
 
   @IsArray()
   @ValidateNested({ each: true })

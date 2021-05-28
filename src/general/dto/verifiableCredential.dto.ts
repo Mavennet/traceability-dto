@@ -13,7 +13,7 @@ import {
 import { Type } from 'class-transformer'
 import { ProofDTO } from './proof.dto'
 
-export class VerifiableCredentialDTO {
+export abstract class VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -21,7 +21,7 @@ export class VerifiableCredentialDTO {
     o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
     o['@context'].includes('https://schema.org/')
   )
-  '@context': string[]
+  abstract '@context': string[]
 
   @IsNotEmpty()
   @IsUrl()

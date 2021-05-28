@@ -12,7 +12,7 @@ import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
 import { PostalAddressDTO } from './postalAddress.dto'
 
-export class ParcelDeliveryDTO {
+export abstract class ParcelDeliveryDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })

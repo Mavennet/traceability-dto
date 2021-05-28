@@ -7,7 +7,7 @@ import {
   Matches
 } from 'class-validator'
 
-export class ConfirmContractDTO {
+export abstract class ConfirmContractDTO {
   @IsNotEmpty()
   @IsNumber()
   contractId: number

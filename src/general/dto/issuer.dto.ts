@@ -10,7 +10,7 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
-export class IssuerDTO {
+export abstract class IssuerDTO {
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })

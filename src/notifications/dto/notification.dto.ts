@@ -11,7 +11,7 @@ import {
 } from 'class-validator'
 import { NOTIFICATION_TYPE } from '../constants'
 
-export class NotificationDTO {
+export abstract class NotificationDTO {
   @IsNotEmpty()
   @IsNumber()
   notificationId: number

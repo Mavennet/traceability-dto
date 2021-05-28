@@ -4,7 +4,7 @@ import {
   Matches
 } from 'class-validator'
 
-export class CreateContractDTO {
+export abstract class CreateContractDTO {
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)

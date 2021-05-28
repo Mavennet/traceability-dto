@@ -3,7 +3,7 @@ import {
 	IsNumberString
 } from 'class-validator'
 
-export class ReadNotificationDTO {
+export abstract class ReadNotificationDTO {
   @IsNotEmpty()
   @IsNumberString()
   notificationId: number

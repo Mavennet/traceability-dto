@@ -13,7 +13,7 @@ import { JSON_TYPE } from '../constants'
 import { GeoCoordinatesDTO } from './geoCoordinates.dto'
 import { PostalAddressDTO } from './postalAddress.dto'
 
-export class PlaceDTO {
+export abstract class PlaceDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
