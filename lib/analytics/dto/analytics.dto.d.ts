@@ -1,4 +1,4 @@
-export declare abstract class AnalyticsDTO {
+export declare class AnalyticsDTO {
     currentMillis: number;
     productId: string;
 }

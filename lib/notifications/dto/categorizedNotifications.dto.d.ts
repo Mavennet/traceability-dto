@@ -1,5 +1,5 @@
 import { NotificationDTO } from './notification.dto';
-export declare abstract class CategorizedNotificationsDTO {
+export declare class CategorizedNotificationsDTO {
     new: NotificationDTO[];
     previous: NotificationDTO[];
 }

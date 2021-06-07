@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../constants';
-export declare abstract class PropertyDTO {
+export declare class PropertyDTO {
     type: JSON_TYPE[];
     identifier: string;
     name: string;

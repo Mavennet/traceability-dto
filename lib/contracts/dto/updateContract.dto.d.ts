@@ -1,4 +1,4 @@
-export declare abstract class UpdateContractDTO {
+export declare class UpdateContractDTO {
     contractId: number;
     startDate: string;
     endDate: string;

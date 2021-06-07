@@ -40,7 +40,7 @@ export abstract class VerifiableCredentialDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: string
+  issuanceDate: Date
   
   credentialSubject: Object
 

@@ -19,7 +19,7 @@ export abstract class ProofDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  created: string
+  created: Date
 
   @IsNotEmpty()
   @IsString()
