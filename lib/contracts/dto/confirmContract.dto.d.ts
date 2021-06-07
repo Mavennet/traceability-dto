@@ -1,4 +1,4 @@
-export declare class ConfirmContractDTO {
+export declare abstract class ConfirmContractDTO {
     contractId: number;
     receiver: string;
     status: boolean;

@@ -1,3 +1,3 @@
-export declare class UpdateNotificationSettingsDTO {
+export declare abstract class UpdateNotificationSettingsDTO {
     actionableOnly: boolean;
 }

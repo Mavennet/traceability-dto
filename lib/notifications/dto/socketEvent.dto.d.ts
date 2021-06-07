@@ -1,3 +1,3 @@
-export declare class SocketEventDTO {
+export declare abstract class SocketEventDTO {
     eventName: string;
 }

@@ -1,6 +1,6 @@
 import { JSON_TYPE } from '../constants';
 import { PostalAddressDTO } from './postalAddress.dto';
-export declare class ParcelDeliveryDTO {
+export declare abstract class ParcelDeliveryDTO {
     type: JSON_TYPE;
     originAddress: PostalAddressDTO;
     deliveryAddress: PostalAddressDTO;
