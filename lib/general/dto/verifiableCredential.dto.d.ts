@@ -1,10 +1,10 @@
 import { ProofDTO } from './proof.dto';
-export declare abstract class VerifiableCredentialDTO {
-    abstract '@context': string[];
+export declare class VerifiableCredentialDTO {
+    '@context': string[];
     id: string;
     type: string[];
     issuer: string;
-    issuanceDate: string;
+    issuanceDate: Date;
     credentialSubject: Object;
     proof: ProofDTO;
 }

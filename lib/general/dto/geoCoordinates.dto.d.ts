@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../constants';
-export declare abstract class GeoCoordinatesDTO {
+export declare class GeoCoordinatesDTO {
     type: JSON_TYPE[];
     latitude: string;
     longitude: string;

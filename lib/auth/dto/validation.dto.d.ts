@@ -1,4 +1,4 @@
-export declare abstract class ValidationDTO {
+export declare class ValidationDTO {
     readonly email?: string;
     readonly password?: string;
     readonly apiKey?: string;

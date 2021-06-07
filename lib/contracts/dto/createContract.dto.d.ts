@@ -1,4 +1,4 @@
-export declare abstract class CreateContractDTO {
+export declare class CreateContractDTO {
     sender: string;
     receiver: string;
     destination: string;

@@ -1,4 +1,4 @@
-export declare abstract class AddressDTO {
+export declare class AddressDTO {
     address: string;
     latitude: string;
     longitude: string;

@@ -1,5 +1,5 @@
 import { NOTIFICATION_TYPE } from '../constants';
-export declare abstract class NotificationDTO {
+export declare class NotificationDTO {
     notificationId: number;
     notificationType: NOTIFICATION_TYPE;
     productId: string;
