@@ -1,7 +1,7 @@
-import { PlaceDTO, ObservationDTO, JSON_TYPE } from '../../general';
+import { PlaceDTO, ObservationDTO } from '../../general';
 import { ProductDTO } from './product.dto';
 export declare abstract class ProductCredentialSubjectDTO {
-    abstract type: JSON_TYPE[];
+    abstract type: any;
     HSCode: string;
     productionDate: string;
     facility: PlaceDTO;
