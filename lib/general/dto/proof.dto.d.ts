@@ -1,5 +1,5 @@
 import { JSON_TYPE, PROOF_PURPOSE_TYPE } from '../constants';
-export declare class ProofDTO {
+export declare abstract class ProofDTO {
     type: JSON_TYPE;
     created: Date;
     jws: string;

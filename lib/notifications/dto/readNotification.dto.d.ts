@@ -1,3 +1,3 @@
-export declare class ReadNotificationDTO {
+export declare abstract class ReadNotificationDTO {
     notificationId: number;
 }
