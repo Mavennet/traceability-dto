@@ -4,7 +4,7 @@ export declare abstract class VerifiableCredentialDTO {
     id: string;
     type: string[];
     issuer: string;
-    issuanceDate: Date;
+    issuanceDate: string;
     credentialSubject: Object;
     proof: ProofDTO;
 }
