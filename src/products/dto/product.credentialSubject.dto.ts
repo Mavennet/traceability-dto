@@ -22,7 +22,7 @@ export abstract class ProductCredentialSubjectDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  abstract type: any
+  abstract type: JSON_TYPE[]
 
   @IsNotEmpty()
   @IsNumberString()
