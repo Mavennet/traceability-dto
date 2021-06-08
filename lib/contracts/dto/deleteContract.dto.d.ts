@@ -1,3 +1,3 @@
-export declare class DeleteContractsDTO {
+export declare abstract class DeleteContractsDTO {
     contractIds: number[];
 }

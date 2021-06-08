@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../constants';
-export declare class PostalAddressDTO {
+export declare abstract class PostalAddressDTO {
     type: JSON_TYPE[];
     organizationName: string;
     streetAddress: string;

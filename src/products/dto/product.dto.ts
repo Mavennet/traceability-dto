@@ -35,9 +35,4 @@ export abstract class ProductDTO {
   @IsOptional()
   @IsString()
   description: string
-
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => MeasurementDTO)
-  sizeOrAmount: MeasurementDTO
 }

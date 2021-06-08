@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../constants';
-export declare class IssuerDTO {
+export declare abstract class IssuerDTO {
     type: JSON_TYPE[];
     id: string;
     url: string;
