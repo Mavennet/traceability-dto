@@ -19,10 +19,7 @@ import {
 import { ProductDTO } from './product.dto'
 
 export abstract class ProductCredentialSubjectDTO {
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  abstract type: JSON_TYPE[]
+  abstract type: any[]
 
   @IsNotEmpty()
   @IsNumberString()
