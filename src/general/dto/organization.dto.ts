@@ -26,22 +26,22 @@ export abstract class OrganizationDTO {
 
   @IsOptional()
   @IsString()
-  description: string
+  description?: string
 
   @IsOptional()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  address: PostalAddressDTO
+  address?: PostalAddressDTO
 
   @IsOptional()
   @IsEmail()
-  email: string
+  email?: string
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
-  phoneNumber: string
+  phoneNumber?: string
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
-  faxNumber: string
+  faxNumber?: string
 }

@@ -18,7 +18,7 @@ export abstract class MeasurementDTO {
 
   @IsOptional()
   @IsString()
-  unitCode: string
+  unitCode?: string
 
   @IsNotEmpty()
   @IsString()
