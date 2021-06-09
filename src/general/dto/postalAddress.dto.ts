@@ -18,11 +18,11 @@ export abstract class PostalAddressDTO {
 
   @IsOptional()
   @IsString()
-  organizationName: string
+  organizationName?: string
 
   @IsOptional()
   @IsString()
-  streetAddress: string
+  streetAddress?: string
 
   @IsNotEmpty()
   @IsString()
@@ -34,7 +34,7 @@ export abstract class PostalAddressDTO {
 
   @IsOptional()
   @IsString()
-  postalCode: string
+  postalCode?: string
 
   @IsNotEmpty()
   @IsString()
