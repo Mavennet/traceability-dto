@@ -22,7 +22,7 @@ export abstract class PlaceDTO {
 
   @IsOptional()
   @IsString()
-  globalLocationNumber: string
+  globalLocationNumber?: string
 
   @IsNotEmptyObject()
   @ValidateNested()

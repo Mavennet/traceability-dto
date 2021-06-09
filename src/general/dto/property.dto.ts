@@ -20,7 +20,7 @@ export abstract class PropertyDTO {
 
   @IsOptional()
   @IsString()
-  identifier: string
+  identifier?: string
 
   @IsNotEmpty()
   @IsString()
