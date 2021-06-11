@@ -31,9 +31,9 @@ export abstract class ParcelDeliveryDTO {
 
   @IsOptional()
   @IsString()
-  deliveryMethod: string
+  deliveryMethod?: string
 
   @IsOptional()
   @IsString()
-  trackingNumber: string
+  trackingNumber?: string
 }
