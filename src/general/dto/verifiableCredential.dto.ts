@@ -31,7 +31,7 @@ export abstract class VerifiableCredentialDTO {
   @IsDateString()
   issuanceDate: string
   
-  credentialSubject: Object
+  abstract credentialSubject: Object
 
   @IsNotEmpty()
   @ValidateNested()

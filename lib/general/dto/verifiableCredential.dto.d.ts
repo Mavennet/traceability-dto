@@ -5,6 +5,6 @@ export declare abstract class VerifiableCredentialDTO {
     abstract type: any[];
     issuer: string;
     issuanceDate: string;
-    credentialSubject: Object;
+    abstract credentialSubject: Object;
     proof: ProofDTO;
 }
