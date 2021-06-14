@@ -1,13 +1,9 @@
 import {
   IsNotEmpty,
   IsUrl,
-  IsArray,
   IsString,
   IsDateString,
-  ArrayMinSize,
-  ArrayMaxSize,
   ValidateNested,
-  Validate,
   Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
@@ -30,7 +26,7 @@ export abstract class VerifiableCredentialDTO {
   @IsNotEmpty()
   @IsDateString()
   issuanceDate: string
-  
+
   credentialSubject: Object
 
   @IsNotEmpty()
