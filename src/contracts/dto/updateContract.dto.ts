@@ -1,7 +1,7 @@
 import {
-	IsNotEmpty,
-	IsNumber,
-	Matches
+  IsNotEmpty,
+  IsNumber,
+  Matches
 } from 'class-validator'
 
 export abstract class UpdateContractDTO {

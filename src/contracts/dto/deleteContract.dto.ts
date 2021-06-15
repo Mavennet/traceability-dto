@@ -1,6 +1,6 @@
 import {
-	IsArray,
-	ArrayMinSize
+  IsArray,
+  ArrayMinSize
 } from 'class-validator'
 
 export abstract class DeleteContractsDTO {

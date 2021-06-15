@@ -1,6 +1,6 @@
 import {
-	IsNotEmpty,
-	IsNumberString
+  IsNotEmpty,
+  IsNumberString
 } from 'class-validator'
 
 export abstract class ReadNotificationDTO {
