@@ -1,20 +1,16 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
-  IsEnum,
   IsString,
   IsNumberString,
   IsArray,
   ValidateNested,
-  Matches,
-  Validate,
-  ArrayNotEmpty
+  Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
   PlaceDTO,
-  ObservationDTO,
-  JSON_TYPE
+  ObservationDTO
 } from '../../general'
 import { ProductDTO } from './product.dto'
 

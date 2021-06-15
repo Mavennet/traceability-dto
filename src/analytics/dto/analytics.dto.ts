@@ -1,7 +1,7 @@
 import {
   IsNotEmpty,
   IsNumber,
-  IsUUID,
+  IsUUID
 } from 'class-validator'
 
 export abstract class AnalyticsDTO {

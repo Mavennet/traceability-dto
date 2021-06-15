@@ -1,6 +1,6 @@
 import {
-	IsNotEmpty,
-	IsBoolean
+  IsNotEmpty,
+  IsBoolean
 } from 'class-validator'
 
 export abstract class UpdateNotificationSettingsDTO {
