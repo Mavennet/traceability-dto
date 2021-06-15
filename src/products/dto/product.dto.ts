@@ -33,5 +33,5 @@ export abstract class ProductDTO {
 
   @IsOptional()
   @IsString()
-  description: string
+  description?: string
 }
