@@ -4,8 +4,9 @@ export declare abstract class OrganizationDTO {
     type: JSON_TYPE[];
     name: string;
     description?: string;
+    did?: string;
     address?: PostalAddressDTO;
     email?: string;
-    phoneNumber?: string;
+    phone?: string;
     faxNumber?: string;
 }
