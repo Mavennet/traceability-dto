@@ -1,7 +1,8 @@
 import {
   IsNotEmpty,
   IsUUID,
-  IsArray
+  IsArray,
+  ArrayMinSize
 } from 'class-validator'
 
 export class ShareProductDTO {
@@ -10,5 +11,6 @@ export class ShareProductDTO {
   productId: string
 
   @IsArray()
+  @ArrayMinSize(0)
   orgs: number[]
 }
