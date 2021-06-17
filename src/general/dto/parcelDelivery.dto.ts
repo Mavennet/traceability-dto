@@ -17,7 +17,7 @@ export abstract class ParcelDeliveryDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.PARCEL_DELIVERY])
-  type: JSON_TYPE
+  type: JSON_TYPE[]
 
   @IsNotEmptyObject()
   @ValidateNested()
