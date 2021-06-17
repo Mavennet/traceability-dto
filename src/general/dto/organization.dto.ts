@@ -43,7 +43,7 @@ export abstract class OrganizationDTO {
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
-  phone?: string
+  phoneNumber?: string
 
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)

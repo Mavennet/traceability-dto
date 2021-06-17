@@ -7,6 +7,6 @@ export declare abstract class OrganizationDTO {
     did?: string;
     address?: PostalAddressDTO;
     email?: string;
-    phone?: string;
+    phoneNumber?: string;
     faxNumber?: string;
 }
