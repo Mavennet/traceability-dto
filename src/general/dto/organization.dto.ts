@@ -29,6 +29,10 @@ export abstract class OrganizationDTO {
   description?: string
 
   @IsOptional()
+  @IsString()
+  did?: string
+
+  @IsOptional()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
   address?: PostalAddressDTO
