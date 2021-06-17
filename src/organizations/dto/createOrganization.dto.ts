@@ -1,6 +1,5 @@
 import {
   IsNotEmpty,
-  IsNotEmptyObject,
   IsEnum,
   IsString,
   Matches,

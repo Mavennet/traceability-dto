@@ -12,7 +12,6 @@ import {
 import { Type } from 'class-transformer'
 import {
   OrganizationDTO,
-  MeasurementDTO,
   JSON_TYPE
 } from '../../general'
 
