@@ -4,6 +4,7 @@ export * from './contracts';
 export * from './documents';
 export * from './events';
 export * from './general';
+export * from './issueVC';
 export * from './notifications';
 export * from './organizations';
 export * from './products';
