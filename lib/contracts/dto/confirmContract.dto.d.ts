@@ -3,5 +3,5 @@ export declare abstract class ConfirmContractDTO {
     receiver: string;
     status: boolean;
     destination: string;
-    comment: string;
+    comment?: string;
 }
