@@ -11,28 +11,34 @@ import {
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
 import { PostalAddressDTO } from './postalAddress.dto'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export abstract class ParcelDeliveryDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.PARCEL_DELIVERY])
   type: JSON_TYPE[]
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
   originAddress: PostalAddressDTO
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
   deliveryAddress: PostalAddressDTO
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   deliveryMethod?: string
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   trackingNumber?: string
