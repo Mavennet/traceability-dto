@@ -27,5 +27,5 @@ export abstract class ConfirmContractDTO {
 
   @IsOptional()
   @IsString()
-  comment: string
+  comment?: string
 }
