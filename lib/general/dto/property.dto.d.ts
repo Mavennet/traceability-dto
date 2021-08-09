@@ -1,6 +1,6 @@
-import { JSON_TYPE } from '../constants';
+import { PROPERTY_TYPE } from '../constants';
 export declare abstract class PropertyDTO {
-    type: JSON_TYPE[];
+    type: PROPERTY_TYPE[];
     identifier?: string;
     name: string;
     description: string;
