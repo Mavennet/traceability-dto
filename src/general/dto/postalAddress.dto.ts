@@ -48,3 +48,35 @@ export abstract class PostalAddressDTO {
   @IsString()
   addressCountry: string
 }
+
+export abstract class PostalAddress {
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  organizationName?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  streetAddress?: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  addressLocality: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  addressRegion: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  postalCode?: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  addressCountry: string
+}
