@@ -1,2 +1,3 @@
 export * from './createTimestamps.dto';
-export * from './timestampDetails.dto';
+export * from './eventTimestampDetails.dto';
+export * from './productTimestampDetails.dto';
