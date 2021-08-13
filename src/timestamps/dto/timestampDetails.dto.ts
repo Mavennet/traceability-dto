@@ -1,12 +1,11 @@
 import { IsNotEmpty, IsString } from 'class-validator'
 
-export class EventTimestampDetailsDTO {
+export class TimestampDetailsDTO {
   @IsNotEmpty()
   @IsString()
   hash: string
 
   @IsNotEmpty()
   @IsString()
-  eventId: string
+  id: string
 }
-
