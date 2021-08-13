@@ -1,4 +1,4 @@
-import { ProductTimestampDetailsDTO, EventTimestampDetailsDTO } from '.';
+import { TimestampDetailsDTO } from '.';
 export declare class CreateTimestampsDTO {
-    timestampsDetails: ProductTimestampDetailsDTO[] | EventTimestampDetailsDTO[];
+    timestampsDetails: TimestampDetailsDTO[];
 }
