@@ -87,5 +87,5 @@ export abstract class Place {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  addressCountry: string  
+  addressCountry: string
 }

@@ -4,8 +4,7 @@ import {
   IsString,
   IsEnum,
   IsArray,
-  ArrayNotEmpty,
-  Validate
+  ArrayNotEmpty
 } from 'class-validator'
 import { PROPERTY_TYPE } from '../constants'
 import { ApiProperty } from '@nestjs/swagger'
