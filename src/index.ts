@@ -1,6 +1,7 @@
 export * from './analytics'
 export * from './auth'
 export * from './contracts'
+export * from './credentials'
 export * from './documents'
 export * from './events'
 export * from './general'

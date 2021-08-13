@@ -1,3 +1,3 @@
 export * from './jsonType'
 export * from './proofPurposeType'
-export * from './propertyTyes'
+export * from './propertyType'
