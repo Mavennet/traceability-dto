@@ -8,7 +8,7 @@ import {
 } from 'class-validator'
 import { ORGANIZATION_ROLE } from '../constants'
 
-export abstract class CreateOrganizationDto {
+export abstract class CreateOrganizationDTO {
   @IsNotEmpty()
   @IsString()
   name: string

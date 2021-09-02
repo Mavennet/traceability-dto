@@ -4,7 +4,7 @@ export declare abstract class MeasurementDTO {
     unitCode?: string;
     value: string;
 }
-export declare abstract class Measurement {
+export declare abstract class FLAT_MeasurementDTO {
     unit?: string;
     value: string;
 }

@@ -36,7 +36,7 @@ export abstract class ObservationDTO {
   measurement: MeasurementDTO
 }
 
-export abstract class Observation {
+export abstract class FLAT_ObservationDTO {
   @ApiProperty()
   @IsEnum(PROPERTY_TYPE)
   type: PROPERTY_TYPE
