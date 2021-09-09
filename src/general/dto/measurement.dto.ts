@@ -29,7 +29,7 @@ export abstract class MeasurementDTO {
   value: string
 }
 
-export abstract class FLAT_MeasurementDTO {
+export abstract class COMPACT_MeasurementDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()

@@ -6,7 +6,7 @@ export declare abstract class ObservationDTO {
     property: PropertyDTO;
     measurement: MeasurementDTO;
 }
-export declare abstract class FLAT_ObservationDTO {
+export declare abstract class COMPACT_ObservationDTO {
     type: PROPERTY_TYPE;
     identifier?: string;
     name: string;

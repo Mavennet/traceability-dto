@@ -8,7 +8,7 @@ export declare abstract class PostalAddressDTO {
     postalCode?: string;
     addressCountry: string;
 }
-export declare abstract class FLAT_PostalAddressDTO {
+export declare abstract class COMPACT_PostalAddressDTO {
     organizationName?: string;
     streetAddress?: string;
     addressLocality: string;
