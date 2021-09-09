@@ -1,0 +1,6 @@
+export declare enum CONTRACT_STATUS {
+    INITIATED = "INITIATED",
+    ACTIVE = "ACTIVE",
+    REJECTED = "REJECTED",
+    EXPIRED = "EXPIRED"
+}
