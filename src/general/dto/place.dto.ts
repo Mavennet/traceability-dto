@@ -43,7 +43,7 @@ export abstract class PlaceDTO {
   address: PostalAddressDTO
 }
 
-export abstract class Place {
+export abstract class COMPACT_PlaceDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
