@@ -8,7 +8,7 @@ import {
   Validate
 } from 'class-validator'
 import { JSON_TYPE } from '../constants'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export abstract class MeasurementDTO {
   @ApiProperty()
@@ -22,6 +22,18 @@ export abstract class MeasurementDTO {
   @IsOptional()
   @IsString()
   unitCode?: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  value: string
+}
+
+export abstract class COMPACT_MeasurementDTO {
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  unit?: string
 
   @ApiProperty()
   @IsNotEmpty()
