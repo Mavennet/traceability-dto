@@ -50,7 +50,7 @@ export class CredentialDTO {
   @IsNotEmpty()
   credentialSubject: Object
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => CredentialStatusDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => CredentialStatusDTO)
