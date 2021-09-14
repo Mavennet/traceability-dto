@@ -1,4 +1,4 @@
-import { PlaceDTO, ObservationDTO } from '../../general';
+import { PlaceDTO, InspectionReportDTO } from '../../general';
 import { ProductDTO } from './product.dto';
 export declare abstract class ProductCredentialSubjectDTO {
     abstract type: any[];
@@ -6,5 +6,5 @@ export declare abstract class ProductCredentialSubjectDTO {
     productionDate: string;
     facility: PlaceDTO;
     abstract product: ProductDTO;
-    observation: ObservationDTO[];
+    inspection: InspectionReportDTO[];
 }

@@ -10,7 +10,7 @@ import {
 import { Type } from 'class-transformer'
 import {
   PlaceDTO,
-  ObservationDTO
+  InspectionReportDTO
 } from '../../general'
 import { ProductDTO } from './product.dto'
 
@@ -38,6 +38,6 @@ export abstract class ProductCredentialSubjectDTO {
 
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => ObservationDTO)
-  observation: ObservationDTO[]
+  @Type(() => InspectionReportDTO)
+  inspection: InspectionReportDTO[]
 }
