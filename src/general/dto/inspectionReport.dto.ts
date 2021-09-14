@@ -16,7 +16,7 @@ export abstract class InspectionReportDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.INSPECTION_REPORT])
-	tupe: JSON_TYPE[]
+	type: JSON_TYPE[]
 
 	@ApiProperty({ type: [ObservationDTO]})
 	@IsArray()
