@@ -3,7 +3,6 @@ import {
   IsNotEmptyObject,
   IsString,
   IsNumberString,
-  IsArray,
   ValidateNested,
   Matches
 } from 'class-validator'
@@ -36,8 +35,8 @@ export abstract class ProductCredentialSubjectDTO {
   @Type(() => ProductDTO)
   abstract product: ProductDTO
 
-  @IsArray()
-  @ValidateNested({ each: true })
+  @IsNotEmptyObject()
+  @ValidateNested()
   @Type(() => InspectionReportDTO)
-  inspection: InspectionReportDTO[]
+  inspection: InspectionReportDTO
 }

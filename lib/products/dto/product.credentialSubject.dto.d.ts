@@ -6,5 +6,5 @@ export declare abstract class ProductCredentialSubjectDTO {
     productionDate: string;
     facility: PlaceDTO;
     abstract product: ProductDTO;
-    inspection: InspectionReportDTO[];
+    inspection: InspectionReportDTO;
 }
