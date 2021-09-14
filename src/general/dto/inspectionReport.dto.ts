@@ -10,7 +10,7 @@ import { JSON_TYPE } from '../constants'
 import { ObservationDTO } from './observation.dto'
 import { ApiProperty } from '@nestjs/swagger'
 
-export abstract class InspectionDTO {
+export abstract class InspectionReportDTO {
 	@ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
