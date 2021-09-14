@@ -87,5 +87,5 @@ export abstract class COMPACT_PlaceDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  addressCountry: string  
+  addressCountry: string
 }

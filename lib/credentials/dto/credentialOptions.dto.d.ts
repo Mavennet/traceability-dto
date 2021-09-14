@@ -1,5 +1,7 @@
+import { CredentialStatusDTO } from './';
+import { PROOF_PURPOSE_TYPE } from '../../general';
 export declare class CredentialOptionsDTO {
-    proofPurpose?: 'assertionMethod' | 'authentication';
+    proofPurpose?: PROOF_PURPOSE_TYPE;
     assertionMethod?: string;
     issuanceDate?: string;
     issuer?: string;
@@ -7,5 +9,5 @@ export declare class CredentialOptionsDTO {
     created?: string;
     challenge?: string;
     domain?: string;
-    credentialStatus?: any;
+    credentialStatus?: CredentialStatusDTO;
 }
