@@ -11,6 +11,7 @@ export declare enum JSON_TYPE {
     QUANTITATIVE_VALUE = "QuantitativeValue",
     INBOND = "Inbond",
     BILL_OF_LADING = "BillOfLading",
+    INSPECTION_REPORT = "InspectionReport",
     ED25519_SIGNATURE_2020 = "Ed25519Signature2020",
     QP_IN_BOND_EVENT_CREDENTIAL = "QPInBondEventCredential",
     REVOCATION_LIST_2020_STATUS = "RevocationList2020Status",
