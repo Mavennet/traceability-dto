@@ -16,5 +16,6 @@ export enum JSON_TYPE {
   QP_IN_BOND_EVENT_CREDENTIAL = 'QPInBondEventCredential',
   REVOCATION_LIST_2020_STATUS = 'RevocationList2020Status',
   REVOCATION_LIST_2020_CREDENTIAL = 'RevocationList2020Credential',
-  REVOCATION_LIST_2020 = 'RevocationList2020'
+  REVOCATION_LIST_2020 = 'RevocationList2020',
+  CUSTOM_PRODUCT = 'product-extend'
 }
