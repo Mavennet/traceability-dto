@@ -26,11 +26,6 @@ export abstract class ProofDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
-  jws: string
-
-  @ApiProperty()
-  @IsNotEmpty()
   @IsEnum(PROOF_PURPOSE_TYPE)
   proofPurpose: PROOF_PURPOSE_TYPE
 
