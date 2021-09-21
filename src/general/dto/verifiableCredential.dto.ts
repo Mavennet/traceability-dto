@@ -17,7 +17,7 @@ export abstract class VerifiableCredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: false })
   id: string
 
   abstract type: any[]

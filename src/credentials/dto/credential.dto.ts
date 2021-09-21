@@ -22,7 +22,7 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: false })
   id: string
 
   @ApiProperty()

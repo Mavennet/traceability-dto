@@ -26,7 +26,7 @@ export abstract class IssuerDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: false })
   url: string
 
   @ApiProperty()
