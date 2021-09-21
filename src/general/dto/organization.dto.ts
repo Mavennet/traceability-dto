@@ -11,7 +11,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
-import { PostalAddressDTO, PostalAddress } from './postalAddress.dto'
+import { PostalAddressDTO, COMPACT_PostalAddressDTO } from './postalAddress.dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export abstract class OrganizationDTO {
@@ -59,7 +59,7 @@ export abstract class OrganizationDTO {
   faxNumber?: string
 }
 
-export abstract class Organization {
+export abstract class COMPACT_OrganizationDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
@@ -78,8 +78,8 @@ export abstract class Organization {
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => PostalAddress)
-  address?: PostalAddress
+  @Type(() => COMPACT_PostalAddressDTO)
+  address?: COMPACT_PostalAddressDTO
 
   @ApiPropertyOptional()
   @IsOptional()

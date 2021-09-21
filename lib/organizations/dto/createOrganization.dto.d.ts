@@ -1,5 +1,5 @@
 import { ORGANIZATION_ROLE } from '../constants';
-export declare abstract class CreateOrganizationDto {
+export declare abstract class CreateOrganizationDTO {
     name: string;
     email: string;
     address: string;

@@ -49,7 +49,7 @@ export abstract class PostalAddressDTO {
   addressCountry: string
 }
 
-export abstract class PostalAddress {
+export abstract class COMPACT_PostalAddressDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
