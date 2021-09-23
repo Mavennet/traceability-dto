@@ -1,6 +1,6 @@
-import { OrganizationDTO, JSON_TYPE } from '../../general';
+import { OrganizationDTO } from '../../general';
 export declare abstract class ProductDTO {
-    abstract type: JSON_TYPE[];
+    abstract type: any;
     manufacturer: OrganizationDTO;
     abstract name: string;
     description?: string;

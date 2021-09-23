@@ -20,7 +20,7 @@ export abstract class ProductDTO {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type.includes(JSON_TYPE.PRODUCT))
-  abstract type: JSON_TYPE[]
+  abstract type: any
 
   @IsNotEmptyObject()
   @ValidateNested()
