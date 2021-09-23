@@ -17,7 +17,6 @@ export class CredentialStatusDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(JSON_TYPE)
-  @Equals(JSON_TYPE.REVOCATION_LIST_2020_STATUS)
   type: JSON_TYPE
 
   @ApiProperty()
