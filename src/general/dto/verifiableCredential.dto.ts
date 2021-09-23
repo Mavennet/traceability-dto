@@ -17,7 +17,7 @@ export abstract class VerifiableCredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development'})
   id: string
 
   abstract type: any[]

@@ -16,7 +16,6 @@ export abstract class ProofDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(JSON_TYPE)
-  @Equals(JSON_TYPE.ED25519_SIGNATURE_2020)
   type: JSON_TYPE
 
   @ApiProperty()

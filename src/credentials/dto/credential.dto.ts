@@ -22,7 +22,7 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development'})
   id: string
 
   @ApiProperty()

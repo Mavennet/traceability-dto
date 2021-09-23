@@ -11,7 +11,7 @@ import { JSON_TYPE } from '../../general'
 export class CredentialStatusDTO {
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development'})
   id: string
 
   @ApiProperty()
@@ -26,6 +26,6 @@ export class CredentialStatusDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development'})
   revocationListCredential: string
 }
