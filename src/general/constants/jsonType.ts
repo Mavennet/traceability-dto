@@ -12,7 +12,6 @@ export enum JSON_TYPE {
   INBOND = 'Inbond',
   BILL_OF_LADING = 'BillOfLading',
   INSPECTION_REPORT = 'InspectionReport',
-  QP_IN_BOND_EVENT_CREDENTIAL = 'QPInBondEventCredential',
   REVOCATION_LIST_2020_STATUS = 'RevocationList2020Status',
   REVOCATION_LIST_2020_CREDENTIAL = 'RevocationList2020Credential',
   REVOCATION_LIST_2020 = 'RevocationList2020',
