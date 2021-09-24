@@ -1,4 +1,4 @@
 export enum TRANSFER_TYPE {
-  OWNERSHIP = 'Ownership',
-  CUSTODY = 'Custody'
+  OWNERSHIP = 'OWNERSHIP',
+  CUSTODY = 'CUSTODY'
 }
