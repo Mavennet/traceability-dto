@@ -15,7 +15,7 @@ export enum JSON_TYPE {
   REVOCATION_LIST_2020_STATUS = 'RevocationList2020Status',
   REVOCATION_LIST_2020_CREDENTIAL = 'RevocationList2020Credential',
   REVOCATION_LIST_2020 = 'RevocationList2020',
-  CUSTOM_PRODUCT = 'product-extend',
-  CUSTOM_ORGANIZATION = 'organization-extend',
+  CUSTOM_PRODUCT = 'ExtProduct',
+  CUSTOM_ORGANIZATION = 'ExtOrganization',
   ED25519SIGNATURE2020 = 'Ed25519Signature2020'
 }
