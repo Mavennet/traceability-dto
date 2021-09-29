@@ -36,7 +36,7 @@ export abstract class ParcelDeliveryDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  deliveryMethod?: string
+  abstract deliveryMethod?: string
 
   @ApiPropertyOptional()
   @IsOptional()

@@ -4,6 +4,6 @@ export declare abstract class ParcelDeliveryDTO {
     type: JSON_TYPE[];
     originAddress: PostalAddressDTO;
     deliveryAddress: PostalAddressDTO;
-    deliveryMethod?: string;
+    abstract deliveryMethod?: string;
     trackingNumber?: string;
 }
