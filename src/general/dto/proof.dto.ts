@@ -1,16 +1,6 @@
-import {
-  IsNotEmpty,
-  IsEnum,
-  IsString,
-  IsDateString,
-  Matches,
-  Equals
-} from 'class-validator'
-import {
-  JSON_TYPE,
-  PROOF_PURPOSE_TYPE
-} from '../constants'
 import { ApiProperty } from '@nestjs/swagger'
+import { IsDateString, IsEnum, IsNotEmpty, IsString, Matches } from 'class-validator'
+import { JSON_TYPE, PROOF_PURPOSE_TYPE } from '../constants'
 
 export abstract class ProofDTO {
   @ApiProperty()

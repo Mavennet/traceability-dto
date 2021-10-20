@@ -11,15 +11,15 @@ import { ObservationDTO } from './observation.dto'
 import { ApiProperty } from '@nestjs/swagger'
 
 export abstract class InspectionReportDTO {
-	@ApiProperty()
+  @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.INSPECTION_REPORT])
-	type: JSON_TYPE[]
+  type: JSON_TYPE[]
 
-	@ApiProperty({ type: [ObservationDTO]})
-	@IsArray()
+  @ApiProperty({ type: [ObservationDTO] })
+  @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
   observation: ObservationDTO[]
