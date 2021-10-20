@@ -1,5 +1,5 @@
 {
-  "name": "mavennet-dto",
+  "name": "@mavennet/traceability-dto",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -13,6 +13,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mavennet/mavennet-dto.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "bugs": {
     "url": "https://github.com/Mavennet/mavennet-dto/issues"
   },
