@@ -1,6 +1,6 @@
 import {
   IsNotEmpty,
-  IsUUID,
+  IsUUID
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
