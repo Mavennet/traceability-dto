@@ -3,5 +3,6 @@ export declare abstract class ProofDTO {
     type: JSON_TYPE;
     created: string;
     proofPurpose: PROOF_PURPOSE_TYPE;
+    proofValue: string;
     verificationMethod: string;
 }

@@ -21,6 +21,11 @@ export abstract class ProofDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
+  proofValue: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
   @Matches(/^did:/)
   verificationMethod: string
 }
