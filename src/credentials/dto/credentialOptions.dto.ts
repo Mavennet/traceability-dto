@@ -30,4 +30,9 @@ export class CredentialOptionsDTO {
   @ValidateNested()
   @Type(() => CredentialStatusDTO)
   credentialStatus?: CredentialStatusDTO
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  type?: string
 }

@@ -27,4 +27,9 @@ export class PresentationOptionsDTO {
   @IsOptional()
   @IsString()
   domain?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  type?: string
 }
