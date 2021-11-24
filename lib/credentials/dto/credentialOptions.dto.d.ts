@@ -6,4 +6,5 @@ export declare class CredentialOptionsDTO {
     verificationMethod?: string;
     created?: string;
     credentialStatus?: CredentialStatusDTO;
+    type?: string;
 }

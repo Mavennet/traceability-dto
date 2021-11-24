@@ -5,4 +5,5 @@ export declare class PresentationOptionsDTO {
     created?: string;
     challenge?: string;
     domain?: string;
+    type?: string;
 }
