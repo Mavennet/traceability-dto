@@ -7,4 +7,4 @@ https://w3c-ccg.github.io/traceability-vocab/
 `npm update && npm run build`
 
 #### To install library
-` npm i git+ssh://git@github.com/mavennet/mavennet-dto.git --save `
+` npm i @mavennet/traceability-dto `
