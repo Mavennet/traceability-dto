@@ -1,25 +1,14 @@
 import { ApiPropertyOptional } from '@nestjs/swagger'
-import { Equals, IsDateString, IsEnum, IsString, IsOptional, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
-import { CredentialStatusDTO } from './'
+import { Equals, IsDateString, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { PROOF_PURPOSE_TYPE } from '../../general'
+import { CredentialStatusDTO } from './'
 
 export class CredentialOptionsDTO {
   @ApiPropertyOptional()
   @IsOptional()
-  @IsEnum(PROOF_PURPOSE_TYPE)
-  @Equals(PROOF_PURPOSE_TYPE.ASSERTION_METHOD || PROOF_PURPOSE_TYPE.AUTHENTICATION)
-  proofPurpose?: PROOF_PURPOSE_TYPE
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
-  assertionMethod?: string
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsDateString()
-  issuanceDate?: string
+  @Equals(PROOF_PURPOSE_TYPE.ASSERTION_METHOD)
+  proofPurpose?: PROOF_PURPOSE_TYPE.ASSERTION_METHOD
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -36,19 +25,14 @@ export class CredentialOptionsDTO {
   @IsDateString()
   created?: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
-  challenge?: string
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
-  domain?: string
-
   @ApiPropertyOptional({ type: () => CredentialStatusDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => CredentialStatusDTO)
   credentialStatus?: CredentialStatusDTO
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  type?: string
 }
