@@ -31,7 +31,7 @@ jobs:
         uses: phips28/gh-action-bump-version@v9.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_TOKEN: ${{ secrets.NPM_CONFIG_TOKEN }}
+          NPM_CONFIG_TOKEN: ${{ secrets.PAT }}
         with:
           commit-message: 'CI: bumps version to {{version}}'
 
@@ -71,4 +71,4 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_TOKEN: ${{ secrets.NPM_CONFIG_TOKEN }}
+          NPM_CONFIG_TOKEN: ${{ secrets.PAT }}

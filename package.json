@@ -15,15 +15,15 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mavennet/mavennet-dto.git"
+    "url": "https://github.com/mavennet/traceability-dto.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "bugs": {
-    "url": "https://github.com/Mavennet/mavennet-dto/issues"
+    "url": "https://github.com/Mavennet/traceability-dto/issues"
   },
-  "homepage": "https://github.com/Mavennet/mavennet-dto#readme",
+  "homepage": "https://github.com/Mavennet/traceability-dto#readme",
   "devDependencies": {
     "@types/node": "^16.4.5",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
