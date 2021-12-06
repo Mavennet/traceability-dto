@@ -1,7 +1,7 @@
 {
   "name": "@mavennet/traceability-dto",
   "version": "1.0.35",
-  "description": "",
+  "description": " ",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
