@@ -1,32 +1,41 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import {
-  IsNotEmpty,
-  IsUrl,
-  IsString,
-  IsDateString,
-  IsOptional,
-  ValidateNested,
-  Matches
-} from 'class-validator'
 import { Type } from 'class-transformer'
-import { ProofDTO } from './'
-import { CredentialStatusDTO } from '../../credentials'
+import {
+  ArrayMinSize,
+  IsArray,
+  IsDateString,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  IsUrl,
+  Validate,
+  ValidateNested
+} from 'class-validator'
+import { CredentialStatusDTO } from '..'
+import { IsType } from '../../general/decorators/isType.decorator'
+import { ProofDTO } from '../../general/dto'
 
 export abstract class VerifiableCredentialDTO {
-  abstract '@context': string[]
+  @ApiProperty()
+  @IsArray()
+  @ArrayMinSize(1)
+  @IsUrl({}, { each: true })
+  @Validate((o) => o['@context'].includes('https://www.w3.org/2018/credentials/v1'))
+  '@context': string[]
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   id: string
 
-  abstract type: any[]
+  @ApiProperty()
+  @IsType(['string', 'array'])
+  type: string[] | string
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @Matches(/^did:/)
-  issuer: string
+  @IsType(['string', 'array'])
+  issuer: string | any[]
 
   @ApiProperty()
   @IsNotEmpty()
@@ -38,6 +47,8 @@ export abstract class VerifiableCredentialDTO {
   @IsDateString()
   expirationDate?: string
 
+  @ApiProperty()
+  @IsNotEmpty()
   abstract credentialSubject: Object
 
   @ApiPropertyOptional({ type: () => CredentialStatusDTO })
