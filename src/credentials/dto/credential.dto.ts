@@ -8,7 +8,8 @@ import {
   IsNotEmpty,
   IsString,
   Matches,
-  ValidateNested
+  ValidateNested,
+  Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { CredentialStatusDTO } from './'
@@ -18,11 +19,11 @@ export class CredentialDTO {
   @IsArray()
   @ArrayMinSize(1)
   @IsUrl({}, { each: true })
+  @Validate((o) => o['@context'].includes('https://www.w3.org/2018/credentials/v1'))
   '@context': string[]
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   id: string
 
   @ApiProperty()
