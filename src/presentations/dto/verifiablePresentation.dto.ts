@@ -23,7 +23,7 @@ export class VerifiablePresentationDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
+  @IsArray()
   verifiableCredential: VerifiableCredentialDTO[]
 
   @ApiProperty()

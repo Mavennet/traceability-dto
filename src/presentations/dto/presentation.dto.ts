@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Type } from 'class-transformer'
 import { ArrayMinSize, IsArray, IsNotEmpty, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
 import { VerifiableCredentialDTO } from '../..'
 import { IsType } from '../../general/decorators/isType.decorator'
@@ -23,7 +22,7 @@ export class Presentation {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
+  @IsArray()
   verifiableCredential: VerifiableCredentialDTO[]
 
   @ApiProperty()
