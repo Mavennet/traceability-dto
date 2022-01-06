@@ -1,26 +1,5 @@
 import { ValidateBy, ValidationArguments, ValidationOptions } from 'class-validator'
 
-// const typeValidator = {
-//   string: function (value: any, args: ValidationArguments) {
-//     const validator = new Validator()
-
-//     return validator.isString(value)
-//   },
-//   int: function (value: any, args: ValidationArguments) {
-//     const validator = new Validator()
-//     return validator.isInt(value)
-//   },
-//   stringArray: function (value: any, args: ValidationArguments) {
-//     const validator = new Validator()
-//     return validator.isArray(value) && value.every((item) => validator.isString(item))
-//   },
-//   array: function (value: any, args: ValidationArguments) {
-//     const validator = new Validator()
-//     return validator.isArray(value)
-//   }
-//   // Add more here
-// }
-
 const IS_TYPE = 'isType'
 
 export function IsType(

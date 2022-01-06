@@ -13,7 +13,7 @@ import {
 } from 'class-validator'
 import { CredentialStatusDTO } from '..'
 import { IsType } from '../../general/decorators/isType.decorator'
-import { ProofDTO } from '../../general/dto'
+import { ProofDTO, IssuerDTO } from '../../general/dto'
 
 export abstract class VerifiableCredentialDTO {
   @ApiProperty()
@@ -29,13 +29,13 @@ export abstract class VerifiableCredentialDTO {
 
   @ApiProperty()
   @IsType(['string', 'array'])
-  type: string[] | string
+  abstract type: string[] | string
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @IsType(['string', 'array'])
-  issuer: string | any[]
+  @IsType(['string', 'object'])
+  issuer: string | IssuerDTO
 
   @ApiProperty()
   @IsNotEmpty()
