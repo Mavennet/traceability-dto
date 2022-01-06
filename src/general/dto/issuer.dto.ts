@@ -1,15 +1,6 @@
-import {
-  IsNotEmpty,
-  IsOptional,
-  IsUrl,
-  IsString,
-  IsArray,
-  ArrayMinSize,
-  Matches,
-  ValidateNested
-} from 'class-validator'
-import { JSON_TYPE } from '../constants'
 import { ApiProperty } from '@nestjs/swagger'
+import { ArrayMinSize, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { JSON_TYPE } from '../constants'
 
 export abstract class IssuerDTO {
   @ApiProperty()
@@ -21,12 +12,10 @@ export abstract class IssuerDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @Matches(/^did:/)
   id: string
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   url: string
 
   @ApiProperty()
