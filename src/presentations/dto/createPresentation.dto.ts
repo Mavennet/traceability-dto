@@ -4,5 +4,5 @@ import { VerifiableCredentialDTO } from '../..'
 export class CreatePresentationDTO {
   @ValidateNested()
   @IsNotEmpty()
-  verifiableCredential: [VerifiableCredentialDTO]
+  verifiableCredential: VerifiableCredentialDTO[]
 }
