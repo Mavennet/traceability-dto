@@ -9,3 +9,4 @@ export * from './notifications';
 export * from './organizations';
 export * from './products';
 export * from './users';
+export * from './presentations';
