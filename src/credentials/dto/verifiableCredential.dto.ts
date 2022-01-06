@@ -12,7 +12,6 @@ import {
   ValidateNested
 } from 'class-validator'
 import { CredentialStatusDTO } from '..'
-import { IsType } from '../..'
 import { ProofDTO, IssuerDTO } from '../../general/dto'
 
 export abstract class VerifiableCredentialDTO {
@@ -34,7 +33,6 @@ export abstract class VerifiableCredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @IsType(['string', 'object'])
   issuer: string | IssuerDTO
 
   @ApiProperty()

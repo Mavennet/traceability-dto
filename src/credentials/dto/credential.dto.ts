@@ -12,7 +12,6 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { CredentialStatusDTO } from './'
-import { IsType } from '../../general/decorators/isType.decorator'
 import { IssuerDTO } from '../..'
 
 export class CredentialDTO {
@@ -35,7 +34,6 @@ export class CredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  @IsType(['string', 'object'])
   issuer: string | IssuerDTO
 
   @ApiProperty()
