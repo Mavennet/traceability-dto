@@ -3,7 +3,7 @@ import { ValidateBy, ValidationArguments, ValidationOptions } from 'class-valida
 const IS_TYPE = 'isType'
 
 export function IsType(
-  types: Array<'string' | 'number' | 'bigint' | 'boolean' | 'symbol' | 'undefined' | 'object' | 'function' | 'array'>,
+  types: Array<'string' | 'number' | 'bigint' | 'boolean' | 'symbol' | 'undefined' | 'object' | 'function'>,
   validationOptions?: ValidationOptions
 ): PropertyDecorator {
   return ValidateBy(
