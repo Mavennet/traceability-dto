@@ -1,5 +1,5 @@
-import { Presentation } from './Presentation.dto';
-import { PresentationOptionsDTO } from './PresentationOptions.dto';
+import { Presentation } from './presentation.dto';
+import { PresentationOptionsDTO } from './presentationOptions.dto';
 export declare class IssuePresentationDTO {
     verifiablePresentation: Presentation;
     options?: PresentationOptionsDTO;
