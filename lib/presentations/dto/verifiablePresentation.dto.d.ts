@@ -3,7 +3,7 @@ export declare class VerifiablePresentationDTO {
     '@context': string[];
     id: string;
     type: string[] | string;
-    verifiableCredential: [VerifiableCredentialDTO];
+    verifiableCredential: VerifiableCredentialDTO[];
     holder: string;
     proof: ProofDTO;
 }
