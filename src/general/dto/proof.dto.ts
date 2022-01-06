@@ -22,7 +22,21 @@ export abstract class ProofDTO {
   proofValue?: string
 
   @ApiProperty()
+  @IsOptional()
+  jws?: string
+
+  @ApiProperty()
   @IsString()
   @IsOptional()
   verificationMethod?: string
+
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  challenge?: string
+
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  domain?: string
 }

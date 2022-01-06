@@ -3,6 +3,6 @@ export declare class Presentation {
     '@context': string[];
     id: string;
     type: string[] | string;
-    verifiableCredential: [VerifiableCredentialDTO];
+    verifiableCredential: VerifiableCredentialDTO[];
     holder: string;
 }
