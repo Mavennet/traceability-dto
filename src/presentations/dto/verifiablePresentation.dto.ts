@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { ArrayMinSize, IsArray, IsNotEmpty, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
 import { ProofDTO, VerifiableCredentialDTO } from '../..'
-import { IsType } from '../../general/decorators/isType.decorator'
 
 export class VerifiablePresentationDTO {
   @ApiProperty()
@@ -17,7 +16,7 @@ export class VerifiablePresentationDTO {
   id: string
 
   @ApiProperty()
-  @IsType(['string', 'array'])
+  @IsString({ each: true })
   type: string[] | string
 
   @ApiProperty()
