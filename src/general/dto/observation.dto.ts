@@ -4,6 +4,7 @@ import {
   IsOptional,
   IsEnum,
   IsString,
+  IsNumberString,
   ValidateNested,
   IsArray,
   ArrayNotEmpty,
@@ -58,7 +59,7 @@ export abstract class COMPACT_ObservationDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
+  @IsNumberString()
   value: string
 
   @ApiPropertyOptional()

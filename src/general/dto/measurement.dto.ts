@@ -3,6 +3,7 @@ import {
   IsOptional,
   IsEnum,
   IsString,
+  IsNumberString,
   IsArray,
   ArrayNotEmpty,
   Validate
@@ -25,7 +26,7 @@ export abstract class MeasurementDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
+  @IsNumberString()
   value: string
 }
 
@@ -37,6 +38,6 @@ export abstract class COMPACT_MeasurementDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
+  @IsNumberString()
   value: string
 }
