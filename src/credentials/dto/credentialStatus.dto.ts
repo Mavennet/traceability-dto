@@ -1,12 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsNotEmpty, IsNumberString, IsUrl } from 'class-validator'
+import { IsEnum, IsNotEmpty, IsNumberString, IsOptional, IsUrl } from 'class-validator'
 import { JSON_TYPE } from '../../general'
 
 export class CredentialStatusDTO {
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  id: string
+  id?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -14,12 +14,12 @@ export class CredentialStatusDTO {
   type: JSON_TYPE
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsNumberString()
-  revocationListIndex: string
+  @IsOptional()
+  revocationListIndex?: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  revocationListCredential: string
+  revocationListCredential?: string
 }
