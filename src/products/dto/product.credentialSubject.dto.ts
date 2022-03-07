@@ -17,7 +17,7 @@ export abstract class ProductCredentialSubjectDTO {
   abstract type: any[]
 
   @IsNotEmpty()
-  @IsNumberString()
+  @IsString()
   HSCode: string
 
   @IsNotEmpty()
