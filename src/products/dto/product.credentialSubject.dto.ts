@@ -1,17 +1,6 @@
-import {
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsString,
-  IsNumberString,
-  ValidateNested,
-  Matches,
-  Validate
-} from 'class-validator'
 import { Type } from 'class-transformer'
-import {
-  PlaceDTO,
-  InspectionReportDTO
-} from '../../general'
+import { IsNotEmpty, IsNotEmptyObject, IsNumberString, IsString, Matches, ValidateNested } from 'class-validator'
+import { InspectionReportDTO, PlaceDTO } from '../../general'
 import { ProductDTO } from './product.dto'
 
 export abstract class ProductCredentialSubjectDTO {
