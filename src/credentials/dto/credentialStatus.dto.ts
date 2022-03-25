@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsNumberString } from 'class-validator'
+import { IsEnum } from 'class-validator'
 import { JSON_TYPE } from '../../general'
 
 export class CredentialStatusDTO {
@@ -11,7 +11,6 @@ export class CredentialStatusDTO {
   type: JSON_TYPE
 
   @ApiProperty()
-  @IsNumberString()
   revocationListIndex: string
 
   @ApiProperty()
