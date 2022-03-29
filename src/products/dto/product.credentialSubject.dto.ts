@@ -1,5 +1,11 @@
+import {
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsString,
+  ValidateNested,
+  Matches
+} from 'class-validator'
 import { Type } from 'class-transformer'
-import { IsNotEmpty, IsNotEmptyObject, IsNumberString, IsString, Matches, ValidateNested } from 'class-validator'
 import { InspectionReportDTO, PlaceDTO } from '../../general'
 import { ProductDTO } from './product.dto'
 
@@ -7,7 +13,7 @@ export abstract class ProductCredentialSubjectDTO {
   abstract type: any[]
 
   @IsNotEmpty()
-  @IsNumberString()
+  @IsString()
   abstract HSCode: string
 
   @IsNotEmpty()
