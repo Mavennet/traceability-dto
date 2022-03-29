@@ -4,7 +4,9 @@ import {
   IsString,
   IsNumberString,
   ValidateNested,
-  Matches
+  Matches,
+  isNumberString,
+  isString
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
@@ -17,7 +19,7 @@ export abstract class ProductCredentialSubjectDTO {
   abstract type: any[]
 
   @IsNotEmpty()
-  @IsNumberString()
+  @IsString()
   abstract HSCode: string
 
   @IsNotEmpty()
