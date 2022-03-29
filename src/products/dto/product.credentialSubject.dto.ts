@@ -2,11 +2,8 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
-  IsNumberString,
   ValidateNested,
-  Matches,
-  isNumberString,
-  isString
+  Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
