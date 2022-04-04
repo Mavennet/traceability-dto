@@ -22,13 +22,13 @@ export abstract class ParcelDeliveryDTO {
   type: JSON_TYPE[]
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
   originAddress: PostalAddressDTO
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
   deliveryAddress: PostalAddressDTO
