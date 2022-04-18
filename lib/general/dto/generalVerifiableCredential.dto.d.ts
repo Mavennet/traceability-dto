@@ -1,4 +1,4 @@
-export declare class VerifiableCredentialDTO {
+export declare class GeneralVerifiableCredentialDTO {
     type: string;
     created: Date;
     jws: string;

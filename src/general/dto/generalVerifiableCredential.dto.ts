@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString, IsDateString, Matches } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class VerifiableCredentialDTO {
+export class GeneralVerifiableCredentialDTO {
   @IsNotEmpty()
   @IsString()
   @ApiProperty()

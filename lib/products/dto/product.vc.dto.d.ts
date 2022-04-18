@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../../general/constants';
-import { VerifiableCredentialDTO } from '../../general/dto/verifiableCredential.dto';
+import { GeneralVerifiableCredentialDTO as VerifiableCredentialDTO } from '../../general/dto/generalVerifiableCredential.dto';
 import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto';
 declare class ProductVCDTOBase {
     '@context': string[];
