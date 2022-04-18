@@ -1,4 +1,5 @@
 export * from './address.dto'
+export * from './documentation.dto'
 export * from './geoCoordinates.dto'
 export * from './inspectionReport.dto'
 export * from './issuer.dto'
@@ -10,3 +11,5 @@ export * from './place.dto'
 export * from './postalAddress.dto'
 export * from './proof.dto'
 export * from './property.dto'
+// export * from './verifiableCredential.dto'
+
