@@ -9,7 +9,6 @@ export class CredentialStatusDTO {
   id?: string
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsEnum(JSON_TYPE)
   type: JSON_TYPE
 
