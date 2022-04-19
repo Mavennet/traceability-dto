@@ -1,4 +1,5 @@
 export * from './address.dto'
+export * from './documentation.dto'
 export * from './geoCoordinates.dto'
 export * from './inspectionReport.dto'
 export * from './issuer.dto'
