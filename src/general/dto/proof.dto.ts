@@ -11,7 +11,7 @@ export abstract class ProofDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  created: string
+  created: Date
 
   @ApiProperty()
   @IsEnum(PROOF_PURPOSE_TYPE)
