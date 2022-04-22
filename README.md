@@ -41,7 +41,7 @@ https://w3c-ccg.github.io/traceability-vocab/
 
 ### Importing
 
-After using npm to install the package, import the DTO at the top of the file that is to use it. 
+After using [npm to install](#installation-%EF%B8%8F) the package, import the DTO at the top of the file that is to use it. 
 
 ```ts
 import { RandomDTO } from '@mavennet/traceability-dto'
