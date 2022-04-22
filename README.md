@@ -73,3 +73,7 @@ src
 ### Notes
 
 - Both [Metaltrail-DTO](https://github.com/Mavennet/metaltrail-dto) and [Neoflow-DTO](https://github.com/Mavennet/neoflow-dto) import DTOs from here. Any changes here for an issue regarding Neoflow for example, may affect Metaltrail.
+<<<<<<< Updated upstream
+=======
+- This is a **private repository**, only Mavennet dev team may access it
+>>>>>>> Stashed changes
