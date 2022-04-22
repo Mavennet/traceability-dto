@@ -68,13 +68,16 @@ Some common issues faced are:
 
 There are two parts to the package: src and lib. 
 
-##### src:
-Is what you are to be editing. When making changes, creating new DTOs, adding constants, etc., all this must be done here. 
+<details><summary>src</summary>
 
-#### lib:
-Is where the DTOs are being exported from when you are importing and using them in your project. Editing the files here do not do much as when you build the package, it gets over written. 
+Is what is being editing. When making changes, creating new DTOs, adding constants, etc., all this must be done here. 
+</details>
 
-The problem arises when you make changes to src but forget to build the package. Although the src contains updates files, the files are going to be imported form lib, which still has the outdates version. Make sure to build the package before pushing the changes to any branch:
+<details><summary>lib</summary>
+Is where the DTOs are being exported from when when any file imports them. Editing the files here is pointless as when the package is built, it gets over written.
+</details>
+
+The problem arises when changes are made to src but package is not built. Although the src contains updates files, the files are going to be imported form lib, which still has the outdates version. Make sure to build the package before pushing the changes to any branch:
 
 ```bash
 npm run build
@@ -82,7 +85,7 @@ npm run build
 
 ### 2. Did not export
 
-Each folder and sub-folder contains a file called index.ts. Ever wonder what it does? It's basically the file where DTOs and folders are being exported from. Without a file being exported, it will not be accesible in another program and you will likley get the "does not exist" error in your import statement. To solve this, add an export statement into the index file contained within the folder where your file is located. 
+Each folder and sub-folder contains a file called index.ts. This is the file where DTOs and folders are being exported from. Without a file being exported, it will not be accesible in another program and will likley result in the "does not exist" error in the import statement. To solve this, add an export statement into the index file contained within the folder where the DTO file is located. 
 
 ```ts
 export * from './random.dto'
@@ -119,15 +122,12 @@ src
 │   ├── consts
 │   └── dto
 ├── credentials
-│   ├── consts
 │   └── dto
 ├── documents
 │   ├── consts
 │   └── dto
 ├── events
-│   ├── consts
-│   └── dto
-│       └── Does not contain any DTOs as of now
+│   └── consts
 ├── general
 │   ├── consts
 │   └── dto
