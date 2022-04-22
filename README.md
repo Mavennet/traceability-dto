@@ -2,28 +2,28 @@
 	<img  alt="Mavennet"  src="https://mavennet-website.s3.amazonaws.com/assets/logo-dark.png"  width="300" />
 </a>
 
-#### Traceability Vocab
+### Traceability Vocab
 
 https://w3c-ccg.github.io/traceability-vocab/
 
-#### To build library
+### To build library
 
 `npm update && npm run build`
 
-#### To install library
+### To install library
 ` npm i @mavennet/traceability-dto `
 
-#### To install a branch of library
+### To install a branch of library
 
 `npm i Mavennet/traceability-dto#branch-name`
 
-#### Branches
+### Branches
 
 [**master**](https://github.com/Mavennet/traceability-dto) - branch that is published as a package version (changes to this will initiate a package version bump)
 
 **_others_** - feature branch
 
-#### Navigation
+### Navigation
 
 Below is a brief overview of the current code base structure.
 
@@ -70,6 +70,6 @@ src
 └── index.ts
 ```
 
-#### Notes
+### Notes
 
 - Both [Metaltrail-DTO](https://github.com/Mavennet/metaltrail-dto) and [Neoflow-DTO](https://github.com/Mavennet/neoflow-dto) import DTOs from here. Any changes here for an issue regarding Neoflow for example, may affect Metaltrail.
