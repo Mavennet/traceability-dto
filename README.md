@@ -24,16 +24,22 @@ https://w3c-ccg.github.io/traceability-vocab/
 
 ### To build library
 
-`npm update && npm run build`
+```bash
+npm update && npm run build
+```
 
 ## Installation ⬇️
 
 ### To install library
-` npm i @mavennet/traceability-dto `
+```bash 
+npm i @mavennet/traceability-dto 
+```
 
 ### To install a branch of library
 
-`npm i Mavennet/traceability-dto#branch-name`
+```bash
+npm i Mavennet/traceability-dto#branch-name
+```
 
 ## Usage ⚙️
 
