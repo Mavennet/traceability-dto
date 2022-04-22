@@ -20,13 +20,13 @@ https://w3c-ccg.github.io/traceability-vocab/
     - [Navigation](#navigation)
     - [Notes](#notes)
 
-## Build 
+## Build 🛠️
 
 ### To build library
 
 `npm update && npm run build`
 
-## Installation 
+## Installation ⬇️
 
 ### To install library
 ` npm i @mavennet/traceability-dto `
@@ -35,7 +35,7 @@ https://w3c-ccg.github.io/traceability-vocab/
 
 `npm i Mavennet/traceability-dto#branch-name`
 
-## Usage 
+## Usage ⚙️
 
 ### Repos that should use this library
 
@@ -49,7 +49,7 @@ After using [npm to install](#installation-%EF%B8%8F) the package, import the DT
 ```ts
 import { RandomDTO } from '@mavennet/traceability-dto'
 ```
-## Troubleshooting 
+## Troubleshooting 🔍
 
 There are two main mistakes people make that result in an error. Either not building or not exporting the DTO. 
 
@@ -80,7 +80,7 @@ Some DTOs are abstract classes, and probably for good reason. But if there is ev
 Reference:
 The [abstract class](https://github.com/Mavennet/traceability-dto/blob/master/src/documents/dto/saveS3DocumentsFolderPath.dto.ts) and the resolved [implementation](https://github.com/Mavennet/neoflow-dto/blob/master/src/documents/dto/saveS3DocumentsFolderPath.dto.ts)
 
-## More About the Repository
+## More About the Repository 🤔
 
 ### Branches
 
