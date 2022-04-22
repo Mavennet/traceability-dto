@@ -2,6 +2,9 @@
 
 ![Mavennet](https://mavennet-website.s3.amazonaws.com/assets/logo-dark.png)
 
+### Build Status
+[![CI/CD](https://github.com/Mavennet/traceability-dto/actions/workflows/release.yaml/badge.svg)](https://github.com/Mavennet/traceability-dto/actions/workflows/release.yaml)
+
 ### Traceability Vocab
 
 https://w3c-ccg.github.io/traceability-vocab/
