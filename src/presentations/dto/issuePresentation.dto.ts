@@ -9,7 +9,7 @@ export class IssuePresentationDTO {
   @ValidateNested()
   @IsOptional()
   @Type(() => Presentation)
-  verifiablePresentation: Presentation
+  presentation: Presentation
 
   @ApiProperty()
   @ValidateNested()
