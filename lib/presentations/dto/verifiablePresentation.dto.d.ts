@@ -1,9 +1,6 @@
-import { ProofDTO, VerifiableCredentialDTO } from '../..';
-export declare class VerifiablePresentationDTO {
-    '@context': string[];
+import { ProofDTO } from '../..';
+import { Presentation } from './presentation.dto';
+export declare class VerifiablePresentationDTO extends Presentation {
     id: string;
-    type: string[] | string;
-    verifiableCredential: VerifiableCredentialDTO[];
-    holder: string;
     proof: ProofDTO;
 }

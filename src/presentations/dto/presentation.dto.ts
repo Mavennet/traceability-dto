@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { ArrayMinSize, IsArray, IsNotEmpty, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
 import { VerifiableCredentialDTO } from '../..'
 
-export class Presentation {
+export abstract class Presentation {
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
@@ -12,7 +12,7 @@ export class Presentation {
 
   @ApiProperty()
   @IsNotEmpty()
-  id: string
+  abstract id: string
 
   @ApiProperty()
   @IsString({ each: true })
