@@ -44,8 +44,8 @@
     "class-validator": "^0.13.1"
   },
   "dependencies": {
-    "@nestjs/common": "^8.0.5",
-    "@nestjs/swagger": "^5.0.8",
+    "@nestjs/common": "^8.4.4",
+    "@nestjs/swagger": "^5.2.1",
     "rxjs": "^7.2.0",
     "stream": "0.0.2"
   }
