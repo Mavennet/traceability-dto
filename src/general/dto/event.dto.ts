@@ -2,8 +2,6 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
-  IsLatitude,
-  IsLongitude,
   ValidateNested,
   IsArray,
   ArrayMinSize,
@@ -33,7 +31,7 @@ export abstract class EventDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  eventTime: string 
+  eventTime: string
 
   @ApiProperty()
   @IsNotEmptyObject()
