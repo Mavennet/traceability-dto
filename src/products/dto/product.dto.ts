@@ -4,6 +4,7 @@ import {
   IsOptional,
   IsEnum,
   IsString,
+  IsUUID,
   ValidateNested,
   IsArray,
   ArrayNotEmpty,
@@ -26,6 +27,10 @@ export abstract class ProductDTO {
   @ValidateNested()
   @Type(() => OrganizationDTO)
   manufacturer: OrganizationDTO
+
+  @IsOptional()
+  @IsUUID()
+  productID?: string
 
   @IsNotEmpty()
   @IsString()

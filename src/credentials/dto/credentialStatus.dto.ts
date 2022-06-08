@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsNotEmpty, IsNumberString, IsOptional, IsUrl } from 'class-validator'
+import { IsEnum, IsNumberString, IsOptional, IsUrl } from 'class-validator'
 import { JSON_TYPE } from '../../general'
 
 export class CredentialStatusDTO {
