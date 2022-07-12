@@ -1,8 +1,9 @@
+import { ProofDTO } from '../../general';
 export declare class AddCredentialDTO {
     id: string;
     '@context': string[];
     type: string[];
     issuer: string;
-    proof: JSON;
+    proof: ProofDTO;
     credentialSubject: JSON;
 }
