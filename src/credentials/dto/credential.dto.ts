@@ -33,7 +33,6 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
   issuer: string | IssuerDTO
 
   @ApiProperty()
