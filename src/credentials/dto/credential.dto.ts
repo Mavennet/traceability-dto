@@ -6,7 +6,6 @@ import {
   IsUrl,
   IsOptional,
   IsNotEmpty,
-  IsString,
   ValidateNested,
   Validate
 } from 'class-validator'
@@ -38,7 +37,7 @@ export class CredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: string
+  issuanceDate: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()
