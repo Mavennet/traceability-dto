@@ -39,7 +39,7 @@ export class CredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: string
+  issuanceDate: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()

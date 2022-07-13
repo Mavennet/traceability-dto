@@ -38,7 +38,7 @@ export abstract class VerifiableCredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: string
+  issuanceDate: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()
