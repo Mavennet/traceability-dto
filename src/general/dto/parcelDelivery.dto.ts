@@ -1,8 +1,8 @@
 import { IsOptional, IsEnum, IsString, ValidateNested, IsArray, ArrayNotEmpty, Validate } from 'class-validator'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
-import { PostalAddressDTO } from './postalAddress.dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { PlaceDTO } from './place.dto'
 
 export abstract class ParcelDeliveryDTO {
   @ApiProperty()
@@ -15,14 +15,14 @@ export abstract class ParcelDeliveryDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => PostalAddressDTO)
-  originAddress: PostalAddressDTO
+  @Type(() => PlaceDTO)
+  originAddress: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => PostalAddressDTO)
-  deliveryAddress: PostalAddressDTO
+  @Type(() => PlaceDTO)
+  deliveryAddress: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
