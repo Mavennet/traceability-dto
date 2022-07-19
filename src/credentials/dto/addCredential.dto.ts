@@ -13,7 +13,7 @@ export class AddCredentialDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsString()
+  @IsString({ each: true })
   type: string[]
 
   @IsNotEmpty()
