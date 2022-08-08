@@ -6,11 +6,11 @@ import {
   IsArray,
   ArrayMinSize,
   IsUUID,
-  IsDateString
+  IsDateString,
+  IsUrl
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { PlaceDTO, OrganizationDTO } from './'
-import { ProductDTO } from '../../products'
 import { Type } from 'class-transformer'
 
 export abstract class EventDTO {
@@ -49,7 +49,6 @@ export abstract class EventDTO {
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  @Type(() => ProductDTO)
-  products: ProductDTO[]
+  @IsUrl({ each: true })
+  products: string[]
 }
