@@ -6,6 +6,7 @@ export declare enum JSON_TYPE {
     PARCEL_DELIVERY = "ParcelDelivery",
     PRODUCT = "Product",
     ORGANIZATION = "Organization",
+    ENTITY = "Entity",
     OBSERVATION = "Observation",
     MEASURED_VALUE = "MeasuredValue",
     QUANTITATIVE_VALUE = "QuantitativeValue",
