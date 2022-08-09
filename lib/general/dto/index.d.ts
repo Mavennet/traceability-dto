@@ -1,5 +1,6 @@
 export * from './address.dto';
 export * from './documentation.dto';
+export * from './entity.dto';
 export * from './event.dto';
 export * from './geoCoordinates.dto';
 export * from './inspectionReport.dto';
