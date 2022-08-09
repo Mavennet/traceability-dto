@@ -49,6 +49,6 @@ export abstract class EventDTO {
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
-  @IsUrl({ each: true })
+  @IsUrl({ protocols: ['http', 'https'] }, { each: true })
   products: string[]
 }
