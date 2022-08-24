@@ -5,7 +5,7 @@ export declare class CredentialDTO {
     id: string;
     type: any[];
     issuer: string | IssuerDTO;
-    issuanceDate: string | Date;
+    issuanceDate?: string | Date;
     expirationDate?: string;
     credentialSubject: Object;
     credentialStatus?: CredentialStatusDTO;
