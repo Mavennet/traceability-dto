@@ -13,6 +13,16 @@ export class CredentialOptionsDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
+  assertionMethod?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  issuanceDate?: string | Date
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
   issuer?: string
 
   @ApiPropertyOptional()
@@ -24,6 +34,16 @@ export class CredentialOptionsDTO {
   @IsOptional()
   @IsDateString()
   created?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  challenge?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  domain?: string
 
   @ApiPropertyOptional({ type: () => CredentialStatusDTO })
   @IsOptional()
