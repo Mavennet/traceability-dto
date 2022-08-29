@@ -1,5 +1,5 @@
 import { VerifiableCredentialDTO } from '../..';
-export declare abstract class Presentation {
+export declare abstract class PresentationDTO {
     '@context': string[];
     abstract id: string;
     type: string[] | string;
