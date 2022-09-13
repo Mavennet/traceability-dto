@@ -1,6 +1,6 @@
-import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { IsOptional, IsString, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { ApiPropertyOptional } from '@nestjs/swagger'
 import { ProofDTO } from '../../general'
 
 export class VerifiablePresentationDTO {
