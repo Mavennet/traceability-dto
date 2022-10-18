@@ -10,8 +10,8 @@ export abstract class GeoCoordinatesDTO {
   @Validate((o) => o.type === [JSON_TYPE.GEO_COORDINATES])
   type: JSON_TYPE[]
 
-  @ApiProperty({ 
-    oneOf: [ 
+  @ApiProperty({
+    oneOf: [
       { type: 'string' },
       { type: 'number' }
     ]
@@ -20,8 +20,8 @@ export abstract class GeoCoordinatesDTO {
   @IsLatitude()
   latitude: string | number
 
-  @ApiProperty({ 
-    oneOf: [ 
+  @ApiProperty({
+    oneOf: [
       { type: 'string' },
       { type: 'number' }
     ]
