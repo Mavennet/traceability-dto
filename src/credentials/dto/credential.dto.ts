@@ -7,7 +7,8 @@ import {
   IsOptional,
   IsNotEmpty,
   ValidateNested,
-  Validate
+  Validate,
+  IsString
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { CredentialStatusDTO } from './'
@@ -23,6 +24,7 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsString()
   id: string
 
   @ApiProperty()

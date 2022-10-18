@@ -1,24 +1,29 @@
+import { ApiProperty } from '@nestjs/swagger'
 import { Equals, IsString, IsNotEmpty, IsArray, ArrayMinSize, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 
+class credentialStatusType {
+  @ApiProperty()
+  @IsString()
+  @Equals('RevocationList2020Status')
+  type: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  status: string
+}
+
 export class UpdateStatusDTO {
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   credentialId: string
 
+  @ApiProperty({ isArray: true, type: credentialStatusType })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => credentialStatusType)
   credentialStatus: credentialStatusType[]
-}
-
-class credentialStatusType {
-  @IsString()
-  @Equals('RevocationList2020Status')
-  type: string
-
-  @IsNotEmpty()
-  @IsString()
-  status: string
 }

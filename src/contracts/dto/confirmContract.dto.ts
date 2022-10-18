@@ -6,7 +6,7 @@ import {
   IsOptional,
   Matches
 } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export abstract class ConfirmContractDTO {
   @ApiProperty()
@@ -30,7 +30,7 @@ export abstract class ConfirmContractDTO {
   @IsString()
   destination: string
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   comment?: string
