@@ -20,7 +20,7 @@ export class UpdateStatusDTO {
   @IsString()
   credentialId: string
 
-  @ApiProperty({ isArray: true, type: credentialStatusType })
+  @ApiProperty({ isArray: true, type: () => credentialStatusType })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })

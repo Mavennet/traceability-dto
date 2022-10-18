@@ -18,7 +18,7 @@ export abstract class InspectionReportDTO {
   @Validate(o => o.type === [JSON_TYPE.INSPECTION_REPORT])
   type: JSON_TYPE[]
 
-  @ApiProperty({ type: [ObservationDTO] })
+  @ApiProperty({ type: () => ObservationDTO })
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
