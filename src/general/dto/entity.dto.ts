@@ -52,7 +52,7 @@ export abstract class EntityDTO {
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
   phoneNumber?: string
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => OrganizationDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => OrganizationDTO)
