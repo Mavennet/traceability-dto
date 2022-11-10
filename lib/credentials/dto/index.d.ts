@@ -5,3 +5,4 @@ export * from './issueCredential.dto';
 export * from './verifiableCredential.dto';
 export * from './addCredential.dto';
 export * from './updateStatus.dto';
+export * from './verifyCredential.dto';
