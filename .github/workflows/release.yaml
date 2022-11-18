@@ -73,5 +73,5 @@ jobs:
           NEW_TAG: ${{ needs.bump-version.outputs.newTag }}
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
           PAT: ${{ secrets.PAT }}
