@@ -3,12 +3,11 @@ import {
   IsNotEmpty,
   IsNumber,
   IsOptional,
-  IsString,
+  IsString
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export abstract class CreateSubContractDTO {
-
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
@@ -33,15 +32,14 @@ export abstract class CreateSubContractDTO {
   @IsNotEmpty()
   @IsNumber()
   cost: number
-  
+
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
   NOS_Period: string | Date
-  
+
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   Delivery_Facility?: string
-
 }

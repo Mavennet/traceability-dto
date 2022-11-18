@@ -30,5 +30,4 @@ export abstract class UpdateContractDTO {
   @IsOptional()
   @Type(() => UpdateSubContractDTO)
   UpdateSubContracts?: UpdateSubContractDTO[]
-
 }

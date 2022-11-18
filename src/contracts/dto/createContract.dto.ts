@@ -45,7 +45,7 @@ export abstract class CreateContractDTO {
   @IsNotEmpty()
   @IsBoolean()
   isMonthly: boolean
-  
+
   @ApiPropertyOptional()
   @IsOptional()
   @IsEmail()
@@ -67,5 +67,4 @@ export abstract class CreateContractDTO {
   @IsOptional()
   @IsNumber()
   tariff?: number
-
 }
