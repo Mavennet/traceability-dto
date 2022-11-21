@@ -3,7 +3,6 @@ import { ArrayNotEmpty, IsNotEmpty, IsString, IsUrl, Validate, ValidateNested } 
 import { ProofDTO } from '../../general'
 
 export class AddCredentialDTO {
-  @IsNotEmpty()
   @IsString()
   id: string
 
