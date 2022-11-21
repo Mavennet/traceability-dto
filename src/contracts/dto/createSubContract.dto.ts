@@ -11,17 +11,7 @@ export abstract class CreateSubContractDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  shipperEmail: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
   pipeline: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  contractId: number
 
   @ApiProperty()
   @IsNotEmpty()
