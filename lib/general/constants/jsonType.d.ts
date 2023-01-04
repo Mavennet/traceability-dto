@@ -19,5 +19,6 @@ export declare enum JSON_TYPE {
     CUSTOM_PRODUCT = "ExtProduct",
     CUSTOM_ORGANIZATION = "ExtOrganization",
     ED25519SIGNATURE2020 = "Ed25519Signature2020",
-    ED25519SIGNATURE2018 = "Ed25519Signature2018"
+    ED25519SIGNATURE2018 = "Ed25519Signature2018",
+    JsonWebSignature2020 = "JsonWebSignature2020"
 }
