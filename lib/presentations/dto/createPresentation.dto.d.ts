@@ -1,8 +1,4 @@
-import { PresentationDTO as PresentationBase } from '../..';
-declare class Presentation extends PresentationBase {
+import { PresentationDTO as PresentationBase } from './presentation.dto';
+export declare class CreatePresentationDTO extends PresentationBase {
     id: string;
 }
-export declare class CreatePresentationDTO {
-    presentation: Presentation;
-}
-export {};

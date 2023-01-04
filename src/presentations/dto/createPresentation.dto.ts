@@ -1,16 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, IsOptional, ValidateNested } from 'class-validator'
-import { PresentationDTO as PresentationBase } from '../..'
+import { IsOptional } from 'class-validator'
+import { PresentationDTO as PresentationBase } from './presentation.dto'
 
-class Presentation extends PresentationBase {
+export class CreatePresentationDTO extends PresentationBase {
   @ApiProperty()
   @IsOptional()
   id: string
-}
-
-export class CreatePresentationDTO {
-  @ValidateNested()
-  @IsNotEmpty()
-  @ApiProperty()
-  presentation: Presentation
 }
