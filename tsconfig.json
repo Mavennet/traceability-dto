@@ -12,7 +12,8 @@
     "experimentalDecorators": true,
     "outDir": "./lib",
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "strictNullChecks": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

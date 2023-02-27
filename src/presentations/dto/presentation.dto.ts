@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { ArrayMinSize, IsArray, IsNotEmpty, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
-import { VerifiableCredentialDTO } from '../..'
+import type { VerifiableCredentialDTO } from '../..'
 
 export abstract class PresentationDTO {
   @ApiProperty()
