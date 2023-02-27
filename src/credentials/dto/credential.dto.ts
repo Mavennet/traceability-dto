@@ -48,7 +48,7 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  credentialSubject: Record<string, unknown>
+  credentialSubject: unknown
 
   @ApiPropertyOptional({ type: () => CredentialStatusDTO })
   @IsOptional()

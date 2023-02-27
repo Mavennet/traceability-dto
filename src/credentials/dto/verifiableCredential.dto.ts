@@ -47,7 +47,7 @@ export abstract class VerifiableCredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  abstract credentialSubject: Record<string, unknown>
+  abstract credentialSubject: unknown
 
   @ApiPropertyOptional({ type: () => CredentialStatusDTO })
   @IsOptional()

@@ -7,7 +7,7 @@ export declare abstract class VerifiableCredentialDTO {
     issuer: string | IssuerDTO;
     issuanceDate?: string | Date;
     expirationDate?: string;
-    abstract credentialSubject: Record<string, unknown>;
+    abstract credentialSubject: unknown;
     credentialStatus?: CredentialStatusDTO;
     proof: ProofDTO;
 }

@@ -7,6 +7,6 @@ export declare class CredentialDTO {
     issuer: string | IssuerDTO;
     issuanceDate?: string | Date;
     expirationDate?: string;
-    credentialSubject: Record<string, unknown>;
+    credentialSubject: unknown;
     credentialStatus?: CredentialStatusDTO;
 }
