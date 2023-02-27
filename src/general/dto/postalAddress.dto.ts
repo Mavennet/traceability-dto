@@ -1,21 +1,12 @@
-import {
-  IsNotEmpty,
-  IsOptional,
-  IsEnum,
-  IsString,
-  IsArray,
-  ArrayNotEmpty,
-  Validate
-} from 'class-validator'
-import { JSON_TYPE } from '../constants'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { ArrayNotEmpty, IsArray, IsNotEmpty, IsOptional, IsString, Validate } from 'class-validator'
+import { JSON_TYPE } from '../constants'
 
 export abstract class PostalAddressDTO {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate(o => o.type === [JSON_TYPE.POSTAL_ADDRESS])
+  @Validate((o) => o.type.includes(JSON_TYPE.POSTAL_ADDRESS))
   type: JSON_TYPE[]
 
   @ApiPropertyOptional()

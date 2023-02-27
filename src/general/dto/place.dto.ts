@@ -1,28 +1,26 @@
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
+  ArrayNotEmpty,
+  IsArray,
+  IsLatitude,
+  IsLongitude,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
-  IsLatitude,
-  IsLongitude,
-  IsEnum,
   IsString,
-  ValidateNested,
-  IsArray,
-  ArrayNotEmpty,
-  Validate
+  Validate,
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
 import { GeoCoordinatesDTO } from './geoCoordinates.dto'
 import { PostalAddressDTO } from './postalAddress.dto'
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export abstract class PlaceDTO {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate(o => o.type === [JSON_TYPE.PLACE])
+  @Validate((o) => o.type.includes(JSON_TYPE.PLACE))
   type: JSON_TYPE[]
 
   @ApiProperty()
