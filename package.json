@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@nestjs/common": "9.0.5",
-    "@nestjs/swagger": "6.0.4",
+    "@nestjs/swagger": "6.2.1",
     "rxjs": "7.5.6"
   }
 }
