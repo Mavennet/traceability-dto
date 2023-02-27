@@ -23,6 +23,7 @@
     "@typescript-eslint/prefer-optional-chain": 0,
     "@typescript-eslint/restrict-plus-operands": 0,
     "@typescript-eslint/restrict-template-expressions": 0,
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/space-before-function-paren": [
       "error",
       { "anonymous": "always", "named": "never" }

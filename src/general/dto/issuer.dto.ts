@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { ArrayMinSize, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
-import { JSON_TYPE } from '../constants'
+import type { JSON_TYPE } from '../constants'
 
 export abstract class IssuerDTO {
   @ApiProperty()
