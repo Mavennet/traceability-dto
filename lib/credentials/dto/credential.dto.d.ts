@@ -1,5 +1,5 @@
 import { CredentialStatusDTO } from './';
-import { IssuerDTO } from '../..';
+import type { IssuerDTO } from '../..';
 export declare class CredentialDTO {
     '@context': string[];
     id: string;
@@ -7,6 +7,6 @@ export declare class CredentialDTO {
     issuer: string | IssuerDTO;
     issuanceDate?: string | Date;
     expirationDate?: string;
-    credentialSubject: Object;
+    credentialSubject: unknown;
     credentialStatus?: CredentialStatusDTO;
 }

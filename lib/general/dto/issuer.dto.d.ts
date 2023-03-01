@@ -1,4 +1,4 @@
-import { JSON_TYPE } from '../constants';
+import type { JSON_TYPE } from '../constants';
 export declare abstract class IssuerDTO {
     type: JSON_TYPE[];
     id: string;

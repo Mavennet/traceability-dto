@@ -12,7 +12,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { CredentialStatusDTO } from './'
-import { IssuerDTO } from '../..'
+import type { IssuerDTO } from '../..'
 
 export class CredentialDTO {
   @ApiProperty()
@@ -48,7 +48,7 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  credentialSubject: Object
+  credentialSubject: unknown
 
   @ApiPropertyOptional({ type: () => CredentialStatusDTO })
   @IsOptional()

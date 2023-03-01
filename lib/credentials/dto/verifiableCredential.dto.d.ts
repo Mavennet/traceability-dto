@@ -1,5 +1,5 @@
 import { CredentialStatusDTO } from '..';
-import { ProofDTO, IssuerDTO } from '../../general/dto';
+import { ProofDTO, type IssuerDTO } from '../../general/dto';
 export declare abstract class VerifiableCredentialDTO {
     '@context': string[];
     id: string;
@@ -7,7 +7,7 @@ export declare abstract class VerifiableCredentialDTO {
     issuer: string | IssuerDTO;
     issuanceDate?: string | Date;
     expirationDate?: string;
-    abstract credentialSubject: Object;
+    abstract credentialSubject: unknown;
     credentialStatus?: CredentialStatusDTO;
     proof: ProofDTO;
 }
