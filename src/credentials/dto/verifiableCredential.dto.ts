@@ -12,7 +12,8 @@ import {
   ValidateNested
 } from 'class-validator'
 import { CredentialStatusDTO } from '..'
-import { ProofDTO, type IssuerDTO } from '../../general/dto'
+import { ProofDTO } from '../../general/dto'
+import type { IssuerDTO } from '../../general/dto'
 
 export abstract class VerifiableCredentialDTO {
   @ApiProperty()
