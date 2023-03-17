@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer'
-import { ArrayNotEmpty, IsNotEmpty, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
+import { ArrayNotEmpty, IsNotEmpty, IsOptional, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
 import { ProofDTO } from '../../general'
 
 export class AddCredentialDTO {
@@ -26,4 +26,7 @@ export class AddCredentialDTO {
 
   @IsNotEmpty()
   credentialSubject: JSON
+
+  @IsOptional()
+  credentialStatus?: JSON
 }

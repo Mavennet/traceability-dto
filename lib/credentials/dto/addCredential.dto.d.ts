@@ -6,4 +6,5 @@ export declare class AddCredentialDTO {
     issuer: string;
     proof: ProofDTO;
     credentialSubject: JSON;
+    credentialStatus?: JSON;
 }
