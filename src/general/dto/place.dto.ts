@@ -29,16 +29,25 @@ export abstract class PlaceDTO {
   globalLocationNumber?: string
 
   @ApiProperty()
+  @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => GeoCoordinatesDTO)
-  geo: GeoCoordinatesDTO
+  geo?: GeoCoordinatesDTO
 
   @ApiProperty()
+  @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
-  address: PostalAddressDTO
+  address?: PostalAddressDTO
+
+  @ApiProperty()
+  @IsOptional()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @IsString()
+  locationName?: string
 }
 
 export abstract class COMPACT_PlaceDTO {

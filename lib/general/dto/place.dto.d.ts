@@ -4,8 +4,9 @@ import { PostalAddressDTO } from './postalAddress.dto';
 export declare abstract class PlaceDTO {
     type: JSON_TYPE[];
     globalLocationNumber?: string;
-    geo: GeoCoordinatesDTO;
-    address: PostalAddressDTO;
+    geo?: GeoCoordinatesDTO;
+    address?: PostalAddressDTO;
+    locationName?: string;
 }
 export declare abstract class COMPACT_PlaceDTO {
     globalLocationNumber?: string;
