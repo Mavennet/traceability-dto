@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsArray, ArrayNotEmpty, IsOptional, IsString } from 'class-validator'
+import { IsEnum, IsArray, ArrayNotEmpty, IsOptional, IsString, IsNotEmpty } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
 export class CommodityDTO {
@@ -10,9 +10,9 @@ export class CommodityDTO {
   type: JSON_TYPE[]
 
   @ApiProperty()
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  commodityCode?: string
+  commodityCode: string
 
   @ApiProperty()
   @IsOptional()
