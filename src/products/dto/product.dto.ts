@@ -12,24 +12,22 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import {
-  OrganizationDTO,
-  JSON_TYPE
-} from '../../general'
+import { OrganizationDTO, JSON_TYPE } from '../../general'
 
 export abstract class ProductDTO {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate(o => o.type.includes(JSON_TYPE.PRODUCT))
+  @Validate((o) => o.type.includes(JSON_TYPE.PRODUCT))
   abstract type: any
 
   @ApiProperty()
+  @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
-  manufacturer: OrganizationDTO
+  manufacturer?: OrganizationDTO
 
   @ApiPropertyOptional()
   @IsOptional()
