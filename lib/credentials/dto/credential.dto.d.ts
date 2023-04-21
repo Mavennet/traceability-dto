@@ -1,4 +1,3 @@
-import { CredentialStatusDTO } from './';
 import type { IssuerDTO } from '../..';
 export declare class CredentialDTO {
     '@context': string[];
@@ -8,5 +7,4 @@ export declare class CredentialDTO {
     issuanceDate?: string | Date;
     expirationDate?: string;
     credentialSubject: unknown;
-    credentialStatus?: CredentialStatusDTO;
 }

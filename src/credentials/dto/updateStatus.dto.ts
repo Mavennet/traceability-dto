@@ -3,19 +3,19 @@ import { Equals, IsString, IsNotEmpty, IsArray, ArrayMinSize, ValidateNested } f
 import { Type } from 'class-transformer'
 
 class credentialStatusType {
-  @ApiProperty()
+  @ApiProperty({ example: 'RevocationList2020Status' })
   @IsString()
   @Equals('RevocationList2020Status')
   type: string
 
-  @ApiProperty()
+  @ApiProperty({ example: '1' })
   @IsNotEmpty()
   @IsString()
   status: string
 }
 
 export class UpdateStatusDTO {
-  @ApiProperty()
+  @ApiProperty({ example: '47f4df54-0832-4234-a538-7745b7096407' })
   @IsNotEmpty()
   @IsString()
   credentialId: string
