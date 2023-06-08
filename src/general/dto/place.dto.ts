@@ -23,29 +23,25 @@ export abstract class PlaceDTO {
   @Validate((o) => o.type.includes(JSON_TYPE.PLACE))
   type: JSON_TYPE[]
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   globalLocationNumber?: string
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
-  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => GeoCoordinatesDTO)
   geo?: GeoCoordinatesDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
-  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
   address?: PostalAddressDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
-  @IsNotEmptyObject()
-  @ValidateNested()
   @IsString()
   locationName?: string
 }
