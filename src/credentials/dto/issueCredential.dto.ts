@@ -16,4 +16,6 @@ export class IssueCredentialDTO {
   @IsOptional()
   @Type(() => CredentialOptionsDTO)
   options?: CredentialOptionsDTO
+
+  
 }

@@ -1,17 +1,14 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import {
+  ArrayMinSize,
   IsArray,
   IsDateString,
-  ArrayMinSize,
-  IsUrl,
-  IsOptional,
   IsNotEmpty,
-  ValidateNested,
-  Validate,
-  IsString
+  IsOptional,
+  IsString,
+  IsUrl,
+  Validate
 } from 'class-validator'
-import { Type } from 'class-transformer'
-import { CredentialStatusDTO } from './'
 import type { IssuerDTO } from '../..'
 
 export class CredentialDTO {
@@ -23,12 +20,12 @@ export class CredentialDTO {
   '@context': string[]
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsString()
+  @IsOptional()
   id: string
 
   @ApiProperty()
-  @IsArray()
+  @IsString({ each: true })
   @ArrayMinSize(1)
   type: any[]
 
@@ -37,7 +34,7 @@ export class CredentialDTO {
   issuer: string | IssuerDTO
 
   @ApiPropertyOptional()
-  @IsOptional()
+  @IsNotEmpty()
   @IsDateString()
   issuanceDate?: string | Date
 
@@ -49,10 +46,4 @@ export class CredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   credentialSubject: unknown
-
-  @ApiPropertyOptional({ type: () => CredentialStatusDTO })
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => CredentialStatusDTO)
-  credentialStatus?: CredentialStatusDTO
 }
