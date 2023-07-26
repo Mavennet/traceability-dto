@@ -1,4 +1,4 @@
-import { CredentialStatusDTO } from '..';
+import { CredentialStatusDTO } from './credentialStatus.dto';
 import { ProofDTO } from '../../general/dto';
 import type { IssuerDTO } from '../../general/dto';
 export declare abstract class VerifiableCredentialDTO {

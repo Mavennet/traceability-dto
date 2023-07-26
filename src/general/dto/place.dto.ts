@@ -6,7 +6,6 @@ import {
   IsLatitude,
   IsLongitude,
   IsNotEmpty,
-  IsNotEmptyObject,
   IsOptional,
   IsString,
   Validate,

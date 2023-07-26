@@ -21,5 +21,6 @@ export enum JSON_TYPE {
   ED25519SIGNATURE2020 = 'Ed25519Signature2020',
   ED25519SIGNATURE2018 = 'Ed25519Signature2018',
   JsonWebSignature2020 = 'JsonWebSignature2020',
-  COMMODITY = 'Commodity'
+  COMMODITY = 'Commodity',
+  StatusList2021Entry = 'StatusList2021Entry'
 }
