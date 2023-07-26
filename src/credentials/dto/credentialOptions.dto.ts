@@ -1,7 +1,16 @@
-import { ApiPropertyOptional } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { Equals, IsDateString, IsOptional, IsString, ValidateNested } from 'class-validator'
-import { PROOF_PURPOSE_TYPE } from '../../general'
+import {
+  Equals,
+  IsDateString,
+  IsEnum,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  ValidateIf,
+  ValidateNested
+} from 'class-validator'
+import { KEY_TYPES, PROOF_PURPOSE_TYPE } from '../../general'
 import { CredentialStatusDTO } from './'
 
 export class CredentialOptionsDTO {
@@ -30,9 +39,9 @@ export class CredentialOptionsDTO {
   @IsString()
   verificationMethod?: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
   @IsDateString()
+  @ValidateIf((object, value) => value !== undefined)
   created?: string
 
   @ApiPropertyOptional()
@@ -45,14 +54,15 @@ export class CredentialOptionsDTO {
   @IsString()
   domain?: string
 
-  @ApiPropertyOptional({ type: () => CredentialStatusDTO })
-  @IsOptional()
+  @ApiProperty({ type: () => CredentialStatusDTO })
+  @ValidateIf((object, value) => value !== undefined)
   @ValidateNested()
   @Type(() => CredentialStatusDTO)
   credentialStatus?: CredentialStatusDTO
 
   @ApiPropertyOptional()
-  @IsOptional()
+  @IsNotEmpty()
+  @IsEnum(KEY_TYPES)
   @IsString()
-  type?: string
+  type: KEY_TYPES
 }

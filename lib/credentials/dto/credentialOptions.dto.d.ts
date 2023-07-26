@@ -1,4 +1,4 @@
-import { PROOF_PURPOSE_TYPE } from '../../general';
+import { KEY_TYPES, PROOF_PURPOSE_TYPE } from '../../general';
 import { CredentialStatusDTO } from './';
 export declare class CredentialOptionsDTO {
     proofPurpose?: PROOF_PURPOSE_TYPE.ASSERTION_METHOD;
@@ -10,5 +10,5 @@ export declare class CredentialOptionsDTO {
     challenge?: string;
     domain?: string;
     credentialStatus?: CredentialStatusDTO;
-    type?: string;
+    type: KEY_TYPES;
 }

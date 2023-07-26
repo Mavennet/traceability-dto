@@ -4,12 +4,14 @@ import {
   IsArray,
   IsDateString,
   IsNotEmpty,
+  IsObject,
   IsOptional,
   IsString,
   IsUrl,
-  Validate
+  Validate,
+  ValidateIf
 } from 'class-validator'
-import type { IssuerDTO } from '../..'
+import type { IssuerDTO } from '../../general'
 
 export class CredentialDTO {
   @ApiProperty()
@@ -21,22 +23,22 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsString()
-  @IsOptional()
+  @ValidateIf((object, value) => value !== undefined)
   id: string
 
   @ApiProperty()
   @IsString({ each: true })
   @ArrayMinSize(1)
-  type: any[]
+  type: string[]
 
   @ApiProperty()
   @IsNotEmpty()
   issuer: string | IssuerDTO
 
-  @ApiPropertyOptional()
+  @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate?: string | Date
+  issuanceDate: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -45,5 +47,6 @@ export class CredentialDTO {
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsObject()
   credentialSubject: unknown
 }
