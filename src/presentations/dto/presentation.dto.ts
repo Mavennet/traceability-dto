@@ -1,5 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { ArrayMinSize, IsArray, IsNotEmpty, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
+import {
+  ArrayMinSize,
+  IsArray,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  IsUrl,
+  Validate,
+  ValidateNested
+} from 'class-validator'
 import type { VerifiableCredentialDTO } from '../..'
 
 export abstract class PresentationDTO {
@@ -16,7 +25,7 @@ export abstract class PresentationDTO {
 
   @ApiProperty()
   @IsString({ each: true })
-  type: string[] | string
+  type: string[]
 
   @ApiProperty()
   @IsNotEmpty()
@@ -26,5 +35,6 @@ export abstract class PresentationDTO {
 
   @ApiProperty()
   @IsString()
+  @IsOptional()
   holder: string
 }

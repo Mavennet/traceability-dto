@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "ES2022",
     "lib": [
       "ESNext"
     ],
-    "module": "CommonJs",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "declaration": true,
     "removeComments": true,
@@ -16,5 +16,5 @@
     "strictNullChecks": true
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "lib"]
 }

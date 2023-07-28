@@ -9,9 +9,19 @@ import {
   IsString,
   IsUrl,
   Validate,
-  ValidateIf
+  ValidateIf,
+  ValidateNested
 } from 'class-validator'
 import type { IssuerDTO } from '../../general'
+
+class CredentialSubject {
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  id?: string;
+
+  [key: string]: any
+}
 
 export class CredentialDTO {
   @ApiProperty()
@@ -48,5 +58,6 @@ export class CredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsObject()
-  credentialSubject: unknown
+  @ValidateNested()
+  credentialSubject: CredentialSubject
 }
