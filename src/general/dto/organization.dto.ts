@@ -19,7 +19,7 @@ export abstract class OrganizationDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate(o => o.type.includes(JSON_TYPE.ORGANIZATION))
+  @Validate((o) => o.type.includes(JSON_TYPE.ORGANIZATION))
   type: JSON_TYPE[]
 
   @ApiProperty()

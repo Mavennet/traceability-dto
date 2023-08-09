@@ -19,7 +19,7 @@ export abstract class EntityDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate(o => o.type.includes(JSON_TYPE.ENTITY))
+  @Validate((o) => o.type.includes(JSON_TYPE.ENTITY))
   type: JSON_TYPE[]
 
   @ApiProperty()

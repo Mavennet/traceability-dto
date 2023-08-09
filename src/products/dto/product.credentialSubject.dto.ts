@@ -1,10 +1,4 @@
-import {
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsString,
-  ValidateNested,
-  Matches
-} from 'class-validator'
+import { IsNotEmpty, IsNotEmptyObject, IsString, ValidateNested, Matches } from 'class-validator'
 import { Type } from 'class-transformer'
 import { InspectionReportDTO, PlaceDTO } from '../../general'
 import { ProductDTO } from './product.dto'

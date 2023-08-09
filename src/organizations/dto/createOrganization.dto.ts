@@ -1,11 +1,4 @@
-import {
-  IsNotEmpty,
-  IsEnum,
-  IsString,
-  Matches,
-  IsEmail,
-  IsPhoneNumber
-} from 'class-validator'
+import { IsNotEmpty, IsEnum, IsString, Matches, IsEmail, IsPhoneNumber } from 'class-validator'
 import { ORGANIZATION_ROLE } from '../constants'
 
 export abstract class CreateOrganizationDTO {

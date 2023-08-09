@@ -1,9 +1,4 @@
-import {
-  IsNotEmpty,
-  IsUUID,
-  IsNumber,
-  IsArray
-} from 'class-validator'
+import { IsNotEmpty, IsUUID, IsNumber, IsArray } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class VCAccessibilityDTO {

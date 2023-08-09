@@ -13,15 +13,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import type { IssuerDTO } from '../../general'
-
-class CredentialSubject {
-  @ApiProperty()
-  @IsOptional()
-  @IsString()
-  id?: string;
-
-  [key: string]: any
-}
+import { CredentialSubject } from './credentialSubject.dto'
 
 export class CredentialDTO {
   @ApiProperty()

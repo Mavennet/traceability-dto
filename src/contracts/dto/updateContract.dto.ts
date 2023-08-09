@@ -1,8 +1,4 @@
-import {
-  IsNotEmpty,
-  IsNumber,
-  Matches
-} from 'class-validator'
+import { IsNotEmpty, IsNumber, Matches } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export abstract class UpdateContractDTO {
