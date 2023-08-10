@@ -6,7 +6,7 @@ export declare class TraceablePresentationDTO {
     id: string;
     type: string[];
     holder: string;
-    verifiableCredential: VerifiableCredentialDTO[];
+    verifiableCredentials: VerifiableCredentialDTO[];
     workflow: WorkflowDTO;
     proof?: ProofDTO;
 }

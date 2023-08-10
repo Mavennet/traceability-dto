@@ -1,8 +1,5 @@
 import type { IssuerDTO } from '../../general';
-declare class CredentialSubject {
-    id?: string;
-    [key: string]: any;
-}
+import { CredentialSubject } from './credentialSubject.dto';
 export declare class CredentialDTO {
     '@context': string[];
     id: string;
@@ -12,4 +9,3 @@ export declare class CredentialDTO {
     expirationDate?: string;
     credentialSubject: CredentialSubject;
 }
-export {};

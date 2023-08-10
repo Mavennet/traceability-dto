@@ -1,9 +1,4 @@
-import {
-  IsNotEmpty,
-  IsString,
-  IsLatitude,
-  IsLongitude
-} from 'class-validator'
+import { IsNotEmpty, IsString, IsLatitude, IsLongitude } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export abstract class AddressDTO {
