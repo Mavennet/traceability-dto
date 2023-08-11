@@ -3,6 +3,6 @@ export declare abstract class PresentationDTO {
     '@context': string[];
     abstract id: string;
     type: string[];
-    verifiableCredentials: VerifiableCredentialDTO[];
+    verifiableCredential: VerifiableCredentialDTO[];
     holder: string;
 }

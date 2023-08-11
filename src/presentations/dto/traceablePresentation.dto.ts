@@ -44,7 +44,7 @@ export class TraceablePresentationDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => VerifiableCredentialDTO)
-  verifiableCredentials: VerifiableCredentialDTO[]
+  verifiableCredential: VerifiableCredentialDTO[]
 
   @ApiProperty()
   @IsNotEmpty()
