@@ -18,8 +18,8 @@ export abstract class ProofDTO {
   proofPurpose?: PROOF_PURPOSE_TYPE
 
   @ApiProperty()
-  @IsOptional()
-  proofValue?: string
+  @IsNotEmpty()
+  proofValue: string
 
   @ApiProperty()
   @IsOptional()

@@ -3,7 +3,7 @@ export declare abstract class ProofDTO {
     type: JSON_TYPE;
     created: Date;
     proofPurpose?: PROOF_PURPOSE_TYPE;
-    proofValue?: string;
+    proofValue: string;
     jws?: string;
     verificationMethod?: string;
     challenge?: string;
