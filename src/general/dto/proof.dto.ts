@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsDateString, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator'
-import { JSON_TYPE, PROOF_PURPOSE_TYPE } from '../constants'
+import { IsDateString, IsEnum, IsNotEmpty, IsOptional, IsString, ValidateIf } from 'class-validator'
+import { JSON_TYPE, PROOF_PURPOSE_TYPE, KEY_TYPES } from '../constants'
 
 export abstract class ProofDTO {
   @ApiProperty()
@@ -18,12 +18,14 @@ export abstract class ProofDTO {
   proofPurpose?: PROOF_PURPOSE_TYPE
 
   @ApiProperty()
+  @ValidateIf((object) => object.type === KEY_TYPES.Ed25519Signature2020)
   @IsNotEmpty()
   proofValue: string
 
   @ApiProperty()
-  @IsOptional()
-  jws?: string
+  @ValidateIf((object) => object.type === KEY_TYPES.Ed25519Signature2018)
+  @IsNotEmpty()
+  jws: string
 
   @ApiProperty()
   @IsString()
