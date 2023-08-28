@@ -1,6 +1,6 @@
-import { JSON_TYPE, PROOF_PURPOSE_TYPE } from '../constants';
+import { PROOF_PURPOSE_TYPE, KEY_TYPES } from '../constants';
 export declare abstract class ProofDTO {
-    type: JSON_TYPE;
+    type: KEY_TYPES;
     created: Date;
     proofPurpose?: PROOF_PURPOSE_TYPE;
     proofValue: string;
