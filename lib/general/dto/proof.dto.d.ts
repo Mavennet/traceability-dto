@@ -4,7 +4,7 @@ export declare abstract class ProofDTO {
     created: Date;
     proofPurpose?: PROOF_PURPOSE_TYPE;
     proofValue: string;
-    jws?: string;
+    jws: string;
     verificationMethod?: string;
     challenge?: string;
     domain?: string;
