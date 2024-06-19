@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.PAT }}
       - name: Automated Version Bump
         id: bump-version
-        uses: phips28/gh-action-bump-version
+        uses: phips28/gh-action-bump-version@master
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
