@@ -19,25 +19,25 @@ export abstract class PostalAddressDTO {
   @IsString()
   streetAddress?: string
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
-  addressLocality: string
+  addressLocality?: string
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
-  addressRegion: string
+  addressRegion?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   postalCode?: string
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
-  addressCountry: string
+  addressCountry?: string
 }
 
 export abstract class COMPACT_PostalAddressDTO {
