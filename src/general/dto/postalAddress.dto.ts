@@ -34,10 +34,10 @@ export abstract class PostalAddressDTO {
   @IsString()
   postalCode?: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
-  addressCountry?: string
+  addressCountry: string
 }
 
 export abstract class COMPACT_PostalAddressDTO {
