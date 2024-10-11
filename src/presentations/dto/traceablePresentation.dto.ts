@@ -10,7 +10,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { ProofDTO } from '../../general'
+import { OrganizationDTO, ProofDTO } from '../../general'
 import { VerifiableCredentialDTO } from '../../credentials'
 import { WorkflowDTO } from './workflow.dto'
 
@@ -19,7 +19,7 @@ export class TraceablePresentationDTO {
   @IsArray()
   @ArrayMinSize(1)
   @IsUrl({}, { each: true })
-  @Validate((o) => o['@context'].includes('https://www.w3.org/2018/credentials/v1'))
+  @Validate((o) => o['@context'].includes('https://www.w3.org/ns/credentials/v2'))
   @Validate((o) => o['@context'].includes('https://w3id.org/traceability/v1'))
   '@context': string[]
 
@@ -37,8 +37,8 @@ export class TraceablePresentationDTO {
 
   @ApiPropertyOptional()
   @IsOptional()
-  @IsString()
-  holder: string
+  @Type(() => OrganizationDTO)
+  holder: OrganizationDTO
 
   @ApiProperty()
   @IsNotEmpty()

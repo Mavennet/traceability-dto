@@ -20,7 +20,7 @@ export class CredentialDTO {
   @IsArray()
   @ArrayMinSize(1)
   @IsUrl({}, { each: true })
-  @Validate((o) => o['@context'].includes('https://www.w3.org/2018/credentials/v1'))
+  @Validate((o) => o['@context'].includes('https://www.w3.org/ns/credentials/v2'))
   '@context': string[]
 
   @ApiProperty()
@@ -40,12 +40,12 @@ export class CredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: string | Date
+  validFrom: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
-  expirationDate?: string
+  validUntil?: string
 
   @ApiProperty()
   @IsNotEmpty()

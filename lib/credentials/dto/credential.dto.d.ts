@@ -5,7 +5,7 @@ export declare class CredentialDTO {
     id: string;
     type: string[];
     issuer: string | IssuerDTO;
-    issuanceDate: string | Date;
-    expirationDate?: string;
+    validFrom: string | Date;
+    validUntil?: string;
     credentialSubject: CredentialSubject;
 }

@@ -1,4 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import {
   ArrayMinSize,
   IsArray,
@@ -9,14 +9,15 @@ import {
   Validate,
   ValidateNested
 } from 'class-validator'
-import type { VerifiableCredentialDTO } from '../..'
+import { OrganizationDTO, VerifiableCredentialDTO } from '../..'
+import { Type } from 'class-transformer'
 
 export abstract class PresentationDTO {
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
   @IsUrl({}, { each: true })
-  @Validate((o) => o['@context'].includes('https://www.w3.org/2018/credentials/v1'))
+  @Validate((o) => o['@context'].includes('https://www.w3.org/ns/credentials/v2'))
   '@context': string[]
 
   @ApiProperty()
@@ -33,8 +34,8 @@ export abstract class PresentationDTO {
   @IsArray()
   verifiableCredential: VerifiableCredentialDTO[]
 
-  @ApiProperty()
-  @IsString()
+  @ApiPropertyOptional()
   @IsOptional()
-  holder: string
+  @Type(() => OrganizationDTO)
+  holder: OrganizationDTO
 }
