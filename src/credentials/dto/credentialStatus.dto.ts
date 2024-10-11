@@ -1,16 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import {
-  Equals,
-  IsArray,
-  IsEnum,
-  IsNotEmpty,
-  IsNumberString,
-  IsOptional,
-  IsString,
-  IsUrl,
-  Validate
-} from 'class-validator'
-import { JSON_TYPE } from '../../general'
+import { IsArray, IsNotEmpty, IsNumberString, IsOptional, IsUrl, Validate } from 'class-validator'
 
 export class CredentialStatusDTO {
   @ApiPropertyOptional()

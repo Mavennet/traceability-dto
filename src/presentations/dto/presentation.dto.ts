@@ -9,7 +9,7 @@ import {
   Validate,
   ValidateNested
 } from 'class-validator'
-import { OrganizationDTO, VerifiableCredentialDTO } from '../..'
+import { OrganizationDTO, type VerifiableCredentialDTO } from '../..'
 import { Type } from 'class-transformer'
 
 export abstract class PresentationDTO {
