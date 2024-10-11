@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { IsArray, IsNotEmpty, IsNumberString, IsOptional, IsUrl, Validate } from 'class-validator'
+import { Equals, IsArray, IsNotEmpty, IsNumberString, IsOptional, IsUrl } from 'class-validator'
 
 export class CredentialStatusDTO {
   @ApiPropertyOptional()
@@ -9,8 +9,8 @@ export class CredentialStatusDTO {
 
   @ApiProperty()
   @IsArray()
-  @Validate((o) => o['@context'].includes('BitstringStatusListEntry'))
-  type: string[]
+  @Equals('BitstringStatusListEntry')
+  type: string
 
   @ApiPropertyOptional()
   @IsNumberString()
