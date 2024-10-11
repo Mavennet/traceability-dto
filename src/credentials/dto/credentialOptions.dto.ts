@@ -27,11 +27,6 @@ export class CredentialOptionsDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  issuanceDate?: string | Date
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
   issuer?: string
 
   @ApiPropertyOptional()
