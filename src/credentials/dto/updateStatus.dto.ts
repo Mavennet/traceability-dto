@@ -5,7 +5,7 @@ import { Type } from 'class-transformer'
 class credentialStatusType {
   @ApiProperty()
   @IsString()
-  @Equals('RevocationList2020Status')
+  @Equals('BitstringStatusListEntry')
   type: string
 
   @ApiProperty()
