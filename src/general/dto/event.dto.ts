@@ -6,8 +6,7 @@ import {
   IsArray,
   ArrayMinSize,
   IsUUID,
-  IsDateString,
-  IsUrl
+  IsDateString
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { PlaceDTO, OrganizationDTO } from './'
@@ -49,6 +48,5 @@ export abstract class EventDTO {
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
-  @IsUrl({ protocols: ['http', 'https'], require_tld: false }, { each: true })
   products: string[]
 }

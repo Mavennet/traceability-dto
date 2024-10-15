@@ -24,6 +24,5 @@ export class CredentialStatusDTO {
 
   @ApiPropertyOptional()
   @IsOptional()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   statusListCredential?: string
 }
