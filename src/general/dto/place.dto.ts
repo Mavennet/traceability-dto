@@ -2,6 +2,7 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
   ArrayNotEmpty,
+  Equals,
   IsArray,
   IsLatitude,
   IsLongitude,
@@ -17,10 +18,10 @@ import { PostalAddressDTO } from './postalAddress.dto'
 
 export abstract class PlaceDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE.PLACE))
-  type: JSON_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE.PLACE)
+  type: JSON_TYPE.PLACE
 
   @ApiPropertyOptional()
   @IsOptional()

@@ -1,6 +1,6 @@
 import { PlaceDTO, OrganizationDTO } from './';
 export declare abstract class EventDTO {
-    type: string[];
+    type: string;
     abstract eventType: string;
     eventId: string;
     eventTime: string;

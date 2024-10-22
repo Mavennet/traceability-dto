@@ -7,7 +7,8 @@ import {
   ValidateNested,
   IsArray,
   ArrayNotEmpty,
-  Validate
+  Validate,
+  Equals
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
@@ -16,11 +17,10 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export abstract class OrganizationDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type.includes(JSON_TYPE.ORGANIZATION))
-  type: JSON_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE.ORGANIZATION)
+  type: JSON_TYPE.ORGANIZATION
 
   @ApiProperty()
   @IsNotEmpty()

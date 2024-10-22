@@ -13,9 +13,10 @@ import {
   ValidateNested
 } from 'class-validator'
 import type { IssuerDTO } from '../../general'
-import { CredentialSubject } from './credentialSubject.dto'
+import { Type } from 'class-transformer'
+import { CredentialStatusDTO } from './credentialStatus.dto'
 
-export class CredentialDTO {
+export abstract class CredentialDTO<T> {
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
@@ -51,5 +52,10 @@ export class CredentialDTO {
   @IsNotEmpty()
   @IsObject()
   @ValidateNested()
-  credentialSubject: CredentialSubject
+  abstract credentialSubject: T
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @Type(() => CredentialStatusDTO)
+  credentialStatus?: CredentialStatusDTO
 }

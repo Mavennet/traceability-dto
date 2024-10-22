@@ -9,7 +9,7 @@ export class IssueCredentialDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CredentialDTO)
-  credential: CredentialDTO
+  credential: CredentialDTO<any>
 
   @ApiProperty()
   @ValidateNested({ each: true })
