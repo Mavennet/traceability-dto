@@ -13,8 +13,7 @@ export class IssueCredentialDTO {
 
   @ApiProperty()
   @ValidateNested({ each: true })
-  @IsNotEmpty()
   @Type(() => CredentialOptionsDTO)
   @IsObject()
-  options: CredentialOptionsDTO
+  options?: CredentialOptionsDTO
 }
