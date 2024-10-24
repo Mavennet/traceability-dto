@@ -1,17 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import {
-  ArrayNotEmpty,
-  Equals,
-  IsArray,
-  IsLatitude,
-  IsLongitude,
-  IsNotEmpty,
-  IsOptional,
-  IsString,
-  Validate,
-  ValidateNested
-} from 'class-validator'
+import { Equals, IsLatitude, IsLongitude, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 import { GeoCoordinatesDTO } from './geoCoordinates.dto'
 import { PostalAddressDTO } from './postalAddress.dto'

@@ -32,7 +32,7 @@ export abstract class PresentationDTO {
   @IsNotEmpty()
   @ValidateNested()
   @IsArray()
-  verifiableCredential: VerifiableCredentialDTO<any>[]
+  verifiableCredential: Array<VerifiableCredentialDTO<any>>
 
   @ApiPropertyOptional()
   @IsOptional()

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { ArrayNotEmpty, Equals, IsArray, IsNotEmpty, IsOptional, IsString, Validate } from 'class-validator'
+import { Equals, IsNotEmpty, IsOptional, IsString } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
 export abstract class PostalAddressDTO {

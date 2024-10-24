@@ -1,15 +1,4 @@
-import {
-  IsNotEmpty,
-  IsOptional,
-  IsEnum,
-  IsString,
-  IsEmail,
-  ValidateNested,
-  IsArray,
-  ArrayNotEmpty,
-  Validate,
-  Equals
-} from 'class-validator'
+import { IsNotEmpty, IsOptional, IsString, IsEmail, ValidateNested, Equals } from 'class-validator'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
 import { PostalAddressDTO, COMPACT_PostalAddressDTO } from './postalAddress.dto'

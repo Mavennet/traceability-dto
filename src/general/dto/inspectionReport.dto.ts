@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { ArrayNotEmpty, Equals, IsArray, IsNotEmpty, IsString, Validate, ValidateNested } from 'class-validator'
+import { Equals, IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 import { ObservationDTO } from './observation.dto'
 
