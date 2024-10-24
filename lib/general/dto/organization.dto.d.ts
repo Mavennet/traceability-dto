@@ -1,7 +1,7 @@
 import { JSON_TYPE } from '../constants';
 import { PostalAddressDTO, COMPACT_PostalAddressDTO } from './postalAddress.dto';
 export declare abstract class OrganizationDTO {
-    type: JSON_TYPE[];
+    type: JSON_TYPE.ORGANIZATION;
     name: string;
     description?: string;
     did?: string;

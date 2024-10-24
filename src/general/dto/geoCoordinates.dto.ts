@@ -1,13 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { ArrayNotEmpty, IsArray, IsLatitude, IsLongitude, IsNotEmpty, Validate } from 'class-validator'
+import { Equals, IsLatitude, IsLongitude, IsNotEmpty, IsString } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
 export abstract class GeoCoordinatesDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE.GEO_COORDINATES))
-  type: JSON_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE.GEO_COORDINATES)
+  type: JSON_TYPE.GEO_COORDINATES
 
   @ApiProperty({
     oneOf: [{ type: 'string' }, { type: 'number' }]

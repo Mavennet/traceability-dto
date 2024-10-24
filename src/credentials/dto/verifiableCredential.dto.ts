@@ -1,11 +1,10 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsNotEmpty, IsObject, IsOptional, ValidateNested } from 'class-validator'
+import { IsNotEmpty, IsObject, ValidateNested } from 'class-validator'
 import { ProofDTO } from '../../general/dto'
 import { CredentialDTO } from './credential.dto'
-import { CredentialStatusDTO } from './credentialStatus.dto'
 
-export class VerifiableCredentialDTO extends CredentialDTO {
+export class VerifiableCredentialDTO<T> extends CredentialDTO<T> {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
@@ -13,9 +12,8 @@ export class VerifiableCredentialDTO extends CredentialDTO {
   @IsObject()
   proof: ProofDTO
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @ValidateNested()
-  @Type(() => CredentialStatusDTO)
-  credentialStatus?: CredentialStatusDTO
+  credentialSubject: T
 }

@@ -1,7 +1,6 @@
 import { ProofDTO } from '../../general/dto';
 import { CredentialDTO } from './credential.dto';
-import { CredentialStatusDTO } from './credentialStatus.dto';
-export declare class VerifiableCredentialDTO extends CredentialDTO {
+export declare class VerifiableCredentialDTO<T> extends CredentialDTO<T> {
     proof: ProofDTO;
-    credentialStatus?: CredentialStatusDTO;
+    credentialSubject: T;
 }

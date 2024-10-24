@@ -1,13 +1,13 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { ArrayNotEmpty, IsArray, IsNotEmpty, IsOptional, IsString, Validate } from 'class-validator'
+import { IsNotEmpty, IsOptional, IsString, Validate } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 
 export abstract class MeasurementDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
+  @IsString()
+  @IsNotEmpty()
   @Validate((o) => o.type.includes(JSON_TYPE.MEASURED_VALUE) || o.type.includes(JSON_TYPE.QUANTITATIVE_VALUE))
-  type: JSON_TYPE[]
+  type: JSON_TYPE.MEASURED_VALUE | JSON_TYPE.QUANTITATIVE_VALUE
 
   @ApiProperty()
   @IsOptional()

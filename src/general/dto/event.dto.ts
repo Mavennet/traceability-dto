@@ -14,9 +14,9 @@ import { Type } from 'class-transformer'
 
 export abstract class EventDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  type: string[]
+  @IsString()
+  @IsNotEmpty()
+  type: string
 
   @ApiProperty()
   @IsNotEmpty()

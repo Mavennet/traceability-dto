@@ -11,7 +11,7 @@ import {
 import { Type } from 'class-transformer'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { OrganizationDTO, ProofDTO } from '../../general'
-import { VerifiableCredentialDTO } from '../../credentials'
+import { EnvelopedVerifiableCredential } from '../../credentials'
 import { WorkflowDTO } from './workflow.dto'
 
 export class TraceablePresentationDTO {
@@ -43,8 +43,8 @@ export class TraceablePresentationDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
-  verifiableCredential: VerifiableCredentialDTO[]
+  @Type(() => EnvelopedVerifiableCredential)
+  verifiableCredential: EnvelopedVerifiableCredential[]
 
   @ApiProperty()
   @IsNotEmpty()

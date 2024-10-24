@@ -1,13 +1,13 @@
-import { IsNotEmpty, IsOptional, IsString, IsEnum, IsArray, ArrayNotEmpty } from 'class-validator'
+import { IsNotEmpty, IsOptional, IsString, Equals } from 'class-validator'
 import { PROPERTY_TYPE } from '../constants'
 import { ApiProperty } from '@nestjs/swagger'
 
 export abstract class PropertyDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(PROPERTY_TYPE, { each: true })
-  type: PROPERTY_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(PROPERTY_TYPE)
+  type: PROPERTY_TYPE
 
   @ApiProperty()
   @IsOptional()
