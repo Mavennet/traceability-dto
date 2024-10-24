@@ -1,4 +1,4 @@
-export declare class CredentialSubject<T> {
+export declare class CredentialSubject {
     type: string;
     id?: string;
     [key: string]: any;
