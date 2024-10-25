@@ -1,9 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsOptional, IsString } from 'class-validator'
+import { ArrayMinSize, IsOptional, IsString } from 'class-validator'
 
 export class CredentialSubject {
-  @IsString()
-  type: string
+  @ApiProperty()
+  @IsString({ each: true })
+  @ArrayMinSize(1)
+  type: string[]
 
   @ApiProperty()
   @IsOptional()

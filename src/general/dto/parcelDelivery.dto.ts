@@ -1,15 +1,15 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { Equals, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { ArrayNotEmpty, IsArray, IsOptional, IsString, Validate, ValidateNested } from 'class-validator'
 import { JSON_TYPE } from '../constants'
 import { PlaceDTO } from './place.dto'
 
 export abstract class ParcelDeliveryDTO {
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  @Equals(JSON_TYPE.PARCEL_DELIVERY)
-  type: JSON_TYPE.PARCEL_DELIVERY
+  @IsArray()
+  @ArrayNotEmpty()
+  @Validate((o) => o.type.includes(JSON_TYPE.PARCEL_DELIVERY))
+  type: JSON_TYPE[]
 
   @ApiPropertyOptional()
   @IsOptional()

@@ -1,5 +1,5 @@
 export declare class CredentialSubject {
-    type: string;
+    type: string[];
     id?: string;
     [key: string]: any;
 }
