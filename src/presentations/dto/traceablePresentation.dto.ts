@@ -37,8 +37,8 @@ export class TraceablePresentationDTO {
 
   @ApiPropertyOptional()
   @IsOptional()
-  @Type(() => OrganizationDTO)
-  holder: OrganizationDTO
+  @IsString()
+  holder?: string
 
   @ApiProperty()
   @IsNotEmpty()
