@@ -14,7 +14,7 @@ import {
 } from 'class-validator'
 import type { IssuerDTO } from '../../general'
 import { Type } from 'class-transformer'
-import { CredentialStatusDTO } from './credentialStatus.dto'
+import { type CredentialStatusDTO } from './credentialStatus.dto'
 import { CredentialSchema } from './credentialSchema.dto'
 
 export abstract class CredentialDTO<T> {
@@ -57,8 +57,8 @@ export abstract class CredentialDTO<T> {
 
   @ApiPropertyOptional()
   @IsOptional()
-  @Type(() => CredentialStatusDTO)
-  credentialStatus?: CredentialStatusDTO
+  @IsArray()
+  credentialStatus?: CredentialStatusDTO[]
 
   @ApiPropertyOptional()
   @IsOptional()
