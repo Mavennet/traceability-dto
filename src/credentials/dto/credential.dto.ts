@@ -15,6 +15,7 @@ import {
 import type { IssuerDTO } from '../../general'
 import { Type } from 'class-transformer'
 import { CredentialStatusDTO } from './credentialStatus.dto'
+import { CredentialSchema } from './credentialSchema.dto'
 
 export abstract class CredentialDTO<T> {
   @ApiProperty()
@@ -58,4 +59,9 @@ export abstract class CredentialDTO<T> {
   @IsOptional()
   @Type(() => CredentialStatusDTO)
   credentialStatus?: CredentialStatusDTO
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @Type(() => CredentialSchema)
+  credentialSchema?: CredentialSchema
 }

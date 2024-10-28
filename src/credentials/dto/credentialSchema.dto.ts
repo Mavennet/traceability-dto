@@ -1,16 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { ArrayMinSize, IsOptional, IsString } from 'class-validator'
 
-export class CredentialSubject {
+export abstract class CredentialSchema {
   @ApiProperty()
-  @IsString({ each: true })
-  @ArrayMinSize(1)
-  type: string[]
+  @IsString()
+  type: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  id?: string;
-
-  [key: string]: any
+  id?: string
 }

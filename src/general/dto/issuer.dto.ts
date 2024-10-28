@@ -16,19 +16,19 @@ export abstract class IssuerDTO {
   @IsString()
   id: string
 
-  @ApiProperty()
-  @IsNotEmpty()
-  url: string
+  @ApiPropertyOptional()
+  @IsOptional()
+  url?: string
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  name: string
-
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  description: string
+  name?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  description?: string
 
   @ApiPropertyOptional()
   @IsOptional()
