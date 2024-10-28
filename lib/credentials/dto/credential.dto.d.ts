@@ -1,5 +1,5 @@
 import type { IssuerDTO } from '../../general';
-import { CredentialStatusDTO } from './credentialStatus.dto';
+import { type CredentialStatusDTO } from './credentialStatus.dto';
 import { CredentialSchema } from './credentialSchema.dto';
 export declare abstract class CredentialDTO<T> {
     '@context': string[];
@@ -9,6 +9,6 @@ export declare abstract class CredentialDTO<T> {
     validFrom: string | Date;
     validUntil?: string;
     abstract credentialSubject: T;
-    credentialStatus?: CredentialStatusDTO;
+    credentialStatus?: CredentialStatusDTO[];
     credentialSchema?: CredentialSchema;
 }

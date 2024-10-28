@@ -15,8 +15,6 @@ export class EnvelopedVerifiableCredential {
   id: string
 
   @ApiProperty()
-  @IsString({ each: true })
-  @ArrayMinSize(1)
-  @Validate((o) => o.type.includes('EnvelopedVerifiableCredential'))
-  type: string[]
+  @IsString()
+  type: string
 }
