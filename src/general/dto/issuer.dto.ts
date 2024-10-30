@@ -1,38 +1,121 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { ArrayMinSize, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { ArrayMinSize, IsArray, IsNotEmpty, IsOptional, IsString, IsUrl, MaxLength } from 'class-validator'
 import type { JSON_TYPE } from '../constants'
-import { Type } from 'class-transformer'
-import { PostalAddressDTO } from './postalAddress.dto'
 
-export abstract class IssuerDTO {
-  @ApiProperty()
+export class IssuerDTO {
+  @ApiProperty({
+    description: "Array of types, expected to be ['Organization']",
+    readOnly: true,
+    default: ['Organization'],
+    enum: ['Organization']
+  })
   @IsArray()
   @ArrayMinSize(1)
-  @ValidateNested({ each: true })
   type: JSON_TYPE[]
 
-  @ApiProperty()
+  @ApiProperty({
+    description: "Issuer's identifier, typically a Decentralized Identifier (DID)",
+    format: 'uri'
+  })
   @IsNotEmpty()
   @IsString()
+  @IsUrl()
   id: string
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: 'URI to a remote logo file, or a `data:` scheme URI of an encoded logo',
+    format: 'uri',
+    maxLength: 512000
+  })
   @IsOptional()
-  url?: string
+  @IsString()
+  @IsUrl()
+  @MaxLength(512000)
+  logo?: string
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: "Issuing organization's name"
+  })
   @IsOptional()
   @IsString()
   name?: string
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: 'The Tax / Fiscal ID of the organization or person, e.g., the TIN in the US or the EORI in EU'
+  })
   @IsOptional()
   @IsString()
-  description?: string
+  taxId?: string
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: "Issuing organization's website URL",
+    format: 'uri'
+  })
   @IsOptional()
-  @ValidateNested()
-  @Type(() => PostalAddressDTO)
-  address?: PostalAddressDTO
+  @IsString()
+  @IsUrl()
+  url?: string
+
+  @ApiPropertyOptional({
+    description: 'Street address as free form text'
+  })
+  @IsOptional()
+  @IsString()
+  street?: string
+
+  @ApiPropertyOptional({
+    description: 'The locality in which the street address is located, e.g., city or town'
+  })
+  @IsOptional()
+  @IsString()
+  locality?: string
+
+  @ApiPropertyOptional({
+    description: 'Province or state in abbreviated format'
+  })
+  @IsOptional()
+  @IsString()
+  region?: string
+
+  @ApiPropertyOptional({
+    description: 'Postal code for the address'
+  })
+  @IsOptional()
+  @IsString()
+  postalCode?: string
+
+  @ApiPropertyOptional({
+    description: 'The two-letter ISO 3166-1 alpha-2 country code'
+  })
+  @IsOptional()
+  @IsString()
+  country?: string
+
+  @ApiPropertyOptional({
+    description: 'Name of the person issuing on behalf of the organization'
+  })
+  @IsOptional()
+  @IsString()
+  representativeName?: string
+
+  @ApiPropertyOptional({
+    description: 'Job title of the person issuing on behalf of the organization'
+  })
+  @IsOptional()
+  @IsString()
+  jobTitle?: string
+
+  @ApiPropertyOptional({
+    description: 'Contact email'
+  })
+  @IsOptional()
+  @IsString()
+  email?: string
+
+  @ApiPropertyOptional({
+    description: 'Contact phone number'
+  })
+  @IsOptional()
+  @IsString()
+  phoneNumber?: string
 }
