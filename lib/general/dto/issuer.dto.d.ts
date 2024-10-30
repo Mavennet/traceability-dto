@@ -1,10 +1,18 @@
 import type { JSON_TYPE } from '../constants';
-import { PostalAddressDTO } from './postalAddress.dto';
-export declare abstract class IssuerDTO {
+export declare class IssuerDTO {
     type: JSON_TYPE[];
     id: string;
-    url?: string;
+    logo?: string;
     name?: string;
-    description?: string;
-    address?: PostalAddressDTO;
+    taxId?: string;
+    url?: string;
+    street?: string;
+    locality?: string;
+    region?: string;
+    postalCode?: string;
+    country?: string;
+    representativeName?: string;
+    jobTitle?: string;
+    email?: string;
+    phoneNumber?: string;
 }
